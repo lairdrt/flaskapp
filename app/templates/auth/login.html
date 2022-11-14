@@ -1,0 +1,53 @@
+{% extends "layouts/base-fullscreen.html" %}
+{% set ns = namespace() %}
+{% block title %} Sign in {% endblock title%} 
+{% block styles %}
+    {{super()}}
+    <link href="{{ config.ASSETS_ROOT }}/vendor/bootstrap/examples/signin.css" rel="stylesheet">
+{% endblock styles %}
+{% block body_attribs %} class="text-center" {% endblock body_attribs %}
+{% block content %}
+    <main class="form-signin w-100 m-auto">
+        <form id="login_form" method="post" action="">
+            {{ form.csrf_token }}
+            <img class="mb-4" src="{{ config.ASSETS_ROOT }}/img/sprinkler.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            <p>
+            {% if msg %}
+                <span class="text-danger">{{ msg | safe }}</span>
+            {% else %}
+                Add your credentials
+            {% endif %}                                     
+            </p> 
+            <div class="form-floating">
+                {{ form.username(placeholder="Username", class="form-control") }}
+                <label for="username">Username</label>
+            </div>
+            <div class="form-floating">
+                {{ form.password(placeholder="Password", class="form-control", type="password") }}
+                <label for="password">Password</label>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button id="signin" name="signin" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        </form>
+        {% if config.SOCIAL_AUTH_GITHUB %}
+        <div class="mt-4 mb-3 text-center">
+            <span class="fw-normal">
+                Or login with
+            </span>
+        </div>
+        <div class="text-center">
+            <a href="{{url_for('auth.login_github')}}" class="btn btn-link" title="GitHub">
+                <i class="fa-brands fa-github fa-3x"></i>                
+            </a>
+        </div>
+        {% endif %}    
+        <p class="mt-5 mb-3 text-muted">&copy; 2020–2023 Same Day Rules</p>
+    </main>
+{% endblock content %}
+<!-- Specific page JS goes here -->
+{% block javascripts %}{% endblock javascripts %}

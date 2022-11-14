@@ -1,0 +1,5 @@
+[user]
+	email = robin.laird@cox.net
+	name = Robin Laird
+[credential]
+	helper = cache

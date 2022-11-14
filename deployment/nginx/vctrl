@@ -1,0 +1,58 @@
+# /etc/nginx/sites-enabled/vctrl
+# https://www.nginx.com/resources/wiki/start/topics/examples/full/
+server {
+    # listen on port 80 (http) and 49080 (for HTTP port forwarding)
+    listen 80;
+    listen 49080;
+    server_name _;
+
+    # write access and error logs to /var/log
+    access_log /var/log/vctrl-access.log;
+    error_log /var/log/vctrl-error.log;
+
+    location / {
+        # forward application requests to the gunicorn server
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_pass http://localhost:8000;
+        proxy_redirect off;
+    }
+
+    location /static {
+        # handle static files directly, without forwarding to the application
+        alias /home/vctrl/app/static;
+        expires 30d;
+    }
+}
+server {
+    # listen on port 443 (https) and 49443 (for HTTPS port forwarding)
+    listen 443 ssl;
+    listen 49443 ssl;
+    server_name _;
+
+    # location of the self-signed SSL certificate
+    ssl_certificate /home/vctrl/deployment/certs/domain.crt;
+    ssl_certificate_key /home/vctrl/deployment/certs/domain.key;
+
+    # write access and error logs to /var/log
+    access_log /var/log/vctrl-access-ssl.log;
+    error_log /var/log/ww-vctrl-error-ssl.log;
+
+    location / {
+        # forward application requests to the gunicorn server
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_pass http://localhost:8000;
+        proxy_redirect off;
+    }
+
+    location /static {
+        # handle static files directly, without forwarding to the application
+        alias /home/vctrl/app/static;
+        expires 30d;
+    }
+}

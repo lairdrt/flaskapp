@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" content="Waterworks Irrigation Control System (ICS) Valve Controller">
+    <meta name="author" content="Same Day Rules">
+    <meta name="description" content="Dashboard for Waterworks Irrigation Control System (ICS) Valve Controller.">
+    <meta name="keywords" content="same day rules, waterworks, valve controller, dashboard, bootstrap, flask, irrigation, watering" />
+    <link rel="canonical" href="https://samedayrules.com">
+
+    <!-- Sprinkler icons created by Freepik - Flaticon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ config.ASSETS_ROOT }}/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ config.ASSETS_ROOT }}/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ config.ASSETS_ROOT }}/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{ config.ASSETS_ROOT }}/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="{{ config.ASSETS_ROOT }}/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Common style sheets -->
+    <link type="text/css" href="{{ config.ASSETS_ROOT }}/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="{{ config.ASSETS_ROOT }}/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+
+    <!-- Specific page CSS -->
+    {% block styles %}
+    {% endblock styles %}
+</head>
+
+<body {% block body_attribs %}{% endblock body_attribs %}>
+    <!-- Specific page sidebar elements -->
+    {% block sidebar %}
+    {% endblock sidebar %}
+
+    <!-- Specific page navigation bar elements -->
+    {% block navbar %}
+    {% endblock navbar %}
+
+    <!-- Specific page content -->
+    {% block content %}
+    {% endblock content %} 
+
+    <!-- Specific page footer elements -->
+    {% block footer %}
+    {% endblock footer %}
+
+    <!-- Common scripts -->
+    {% include 'includes/scripts.html' %}
+    
+    <!-- Specific page JS -->
+    {% block scripts %}
+    {% endblock scripts %}  
+</body>
+</html>
