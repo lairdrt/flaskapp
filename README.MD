@@ -38,7 +38,7 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 2. Select dropdown for your account
 3. Select *Settings*
 4. Select *SSH and GPG keys*
-5. Select *Add Key*
+5. Select *New SSH Key*
 
 
 ## Installing Python
