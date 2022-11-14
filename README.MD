@@ -27,4 +27,11 @@ $sudo apt-get -y install python3 python3-venv python3-dev
 $sudo apt-get -y install supervisor nginx git
 $sudo pip install --upgrade pip
 
+## Install MySQL DB (Maria DB):
+
+$sudo apt install mariadb-server
+$sudo mysql_secure_installation
+- Answer "N" to prompts regarding setting/changing root password
+- Answer “Y” to all other prompts
+
 &copy; 2020-2023 Same Day Rules
