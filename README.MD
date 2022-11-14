@@ -27,4 +27,4 @@ $sudo apt-get -y install python3 python3-venv python3-dev
 $sudo apt-get -y install supervisor nginx git
 $sudo pip install --upgrade pip
 
-&copy; 2020-2021 Same Day Rules
+&copy; 2020-2023 Same Day Rules
