@@ -42,4 +42,6 @@ database (PostgreSQL, MySQL, SQLite3) along with secure login and Bootstrap (5) 
 `>ALTER USER database_user_name@localhost IDENTIFIED BY 'database_user_password'; # as necessary`
 `>FLUSH PRIVILEGES;`
 
+## More to do
+
 &copy; 2020-2023 Same Day Rules
