@@ -36,17 +36,15 @@ database (PostgreSQL, MySQL, SQLite3) along with secure login and Bootstrap (5) 
 
 ## Make Database
 `$sudo mysql -u root -p`
-
 `>CREATE DATABASE database_name;`
-
 `>CREATE USER 'database_user_name'@'localhost' IDENTIFIED BY 'database_user_password';`
-
 `>GRANT ALL PRIVILEGES ON database_name.* TO 'database_user_name'@'localhost';`
-
 `>ALTER USER database_user_name@localhost IDENTIFIED BY 'database_user_password'; # as necessary`
-
 `>FLUSH PRIVILEGES;`
 
 ## More to do
+Hello
+There
+One, two, three
 
 &copy; 2020-2023 Same Day Rules
