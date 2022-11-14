@@ -34,9 +34,10 @@ $ssh -T git@github.com
 ### Add SSH Key to GitHib Account
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
-1. Log into your [GitHub](https://github.com) account.
-2. Goto Account Settings.
-3. ...
+1. Log into your [GitHub](https://github.com) account
+2. Select dropdown for your account
+3. Select 'Settings'
+4. Select SSH/GPG Keys
 
 
 ## Installing Python
