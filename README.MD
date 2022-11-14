@@ -1,8 +1,6 @@
 # Valve Controller Flask Template
-
 The Valve Controller Flask Template contains the framework for quickly building a full-stack application using your choice of
 database (PostgreSQL, MySQL, SQLite3) along with secure login and Bootstrap (5) HTML components.
-
 ## New Raspberry Pi Configuration
 ```
 $sudo apt-get -y update
@@ -13,10 +11,11 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 ### Enable SSH on Raspberry Pi
 ```
 $sudo raspi-config
-- Select Interface Options
-- Select SSH
-- Select Yes
-- Select Ok/Finish
+1. Select 'Interface Options'
+2. Select 'SSH'
+3. Select 'Yes'
+4. Select 'Ok'
+5. Select 'Finish'
 ```
 ### Generate SSH Public/Private Key
 ```
@@ -33,14 +32,13 @@ $ssh -T git@github.com
 ```
 ### Add SSH Key to GitHib Account
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
-
 1. Log into your [GitHub](https://github.com) account
 2. Select dropdown for your account
-3. Select *Settings*
-4. Select *SSH and GPG keys*
-5. Select *New SSH Key*
-
-
+3. Select 'Settings'
+4. Select 'SSH and GPG keys'
+5. Select 'New SSH key'
+6. Fill in the fields regarding the key
+7. Select 'Add SSH key'
 ## Installing Python
 ```
 $sudo apt-get -y install python3 python3-venv python3-dev
