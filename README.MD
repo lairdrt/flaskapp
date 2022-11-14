@@ -8,19 +8,37 @@ database (PostgreSQL, MySQL, SQLite3) along with secure login and Bootstrap (5) 
 $sudo apt-get -y update
 $sudo apt-get -y upgrade
 ```
-## SSH Configuration
+## SSH Configuration for New Installation
+https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
+### Enable SSH on Raspberry Pi
 ```
 $sudo raspi-config
 - Select Interface Options
 - Select SSH
 - Select Yes
+- Select Ok/Finish
+```
+### Generate SSH Public/Private Key
+```
 $cd ~
 $mkdir .ssh
+$chmod 0700 ~/.ssh
 $cd ~/.ssh
-$nano authorized_keys
-- Copy your public key here
-- Save and exit
+$ssh-keygen -t rsa
+- Hit enter to accept default settings for all prompts
+$mv id_rsa.pub authorized_keys
+$ssh -T git@github.com
+- Answer 'yes' to question about wanting to connect
+- This should add GitHub to ~/.ssh/known_hosts file
 ```
+### Add SSH Key to GitHib Account
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
+1. Log into your [GitHub](https://github.com) account.
+2. Goto Account Settings.
+3. ...
+
+
 ## Installing Python
 ```
 $sudo apt-get -y install python3 python3-venv python3-dev
@@ -29,8 +47,8 @@ $sudo pip install --upgrade pip
 ```
 ## Install MySQL DB (Maria DB)
 ```
-$sudo apt install mariadb-server`
-$sudo mysql_secure_installation`
+$sudo apt install mariadb-server
+$sudo mysql_secure_installation
 - Answer "N" to prompts regarding setting/changing root password
 - Answer “Y” to all other prompts
 ```
