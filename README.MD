@@ -5,7 +5,7 @@ The instructions below describe how to commission a (Raspberry Pi) microcomputer
 [Flask](https://flask.palletsprojects.com/en/2.2.x/) micro-framework that supports a full stack embedded application. They assume that you are starting from scratch.
 
 ## Hardware
-1. [Raspberry Pi - Zero 2W](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
+1. [Raspberry Pi - Zero 2 W](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
 2. [Power supply](https://www.raspberrypi.com/products/micro-usb-power-supply/)
 3. [MicroSD memory card](https://www.tomshardware.com/best-picks/raspberry-pi-microsd-cards)
 4. [MicroSD USB card reader](https://www.amazon.com/Adapter-Standard-Connector-Smartphones-Function/dp/B01BXSKPES/ref=asc_df_B01BXSKPES)
