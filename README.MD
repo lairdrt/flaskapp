@@ -194,4 +194,7 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 
 `>FLUSH PRIVILEGES;`
 
+## Configure Nginx and Supervisor
+`$sudo cp ~/vctrl/deployment/nginx/vctrl /etc/nginx/sites-enabled/vctrl`
+'$sudo cp ~/vctrl/deployment/supervisor/vctrl.conf /etc/supervisor/conf.d/vctrl.conf`
 &copy; 2020-2023 Same Day Rules
