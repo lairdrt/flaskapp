@@ -40,6 +40,10 @@ And you'll usually need some form of development station, assuming a laptop comp
 
 `$sudo apt-get -y upgrade`
 ## Configure Wireless LAN
+`$sudo raspi-config`
+1. Select 'Localisation Options'
+2. Select 'WLAN Country' (US is under 'US United States')
+3. Select 'Finish'
 
 ## Configure SSH
 https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
