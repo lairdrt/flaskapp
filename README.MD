@@ -30,7 +30,7 @@ And you'll usually need some form of development station, assuming a laptop comp
 - Set the SSH public key
 8. Select WRITE
 9. After the write operation is complete, exit the imager program
-10. Eject the USB card reader and remove the SD card from the reader
+10. Eject the USB card reader and remove the MicroSD card from the reader
 
 ## Update OS
 `$sudo apt-get -y update`
