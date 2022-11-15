@@ -1,6 +1,14 @@
 # Valve Controller Flask Template
-The Valve Controller Flask Template contains the framework for quickly building a full-stack application using your choice of
-database (PostgreSQL, MySQL, SQLite3) along with secure login and Bootstrap (5) HTML components.
+The Valve Controller Flask Template contains the framework for quickly building a [full stack](https://www.w3schools.com/whatis/whatis_fullstack.asp) application using your choice of database (PostgreSQL, MySQL, SQLite3) along with secure login and Bootstrap (5) HTML components.
+
+The instructions below describe how to commission a (Raspberry Pi) microcomputer system running (Raspberry Pi OS) Linux with the Flask micro-framework that supports a full stack embedded application. They assume that you are starting from scratch.
+
+## Hardware
+1. Raspberry Pi
+2. Power supply
+3. MicroSD memory card
+4. Computer monitor
+5. Wireless USB keyboard/mouse/dongle
 
 ## New Raspberry Pi Configuration
 `$sudo apt-get -y update`
