@@ -74,11 +74,20 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 ## Setup git Repository
 `$mkdir vctrl`
 
-`cd ~/vctrl`
+`$cd ~/vctrl`
 
 `$git init`
 
-`$git clone ...`
+`$git clone https://github.com/lairdrt/vctrl.git`
+
+## Create Virtual Environment and Install Python Packages
+`$cd ~/vctrl`
+
+`$python3 -m venv venv`
+
+`$source venv/bin/activate`
+
+`$pip install -r requirements.txt`
 
 ## Install MySQL DB (Maria DB)
 `$sudo apt install mariadb-server`
