@@ -45,7 +45,7 @@ https://docs.oracle.com/en/cloud/paas/goldengate-cloud/tutorial-change-private-k
 2. Under 'Parameters', select 'RSA' and use 2048 for bits in generated key
 3. Load your existing private key that you generated above (and saved locally)
 4. After you've loaded your existing private key, save the new key as a .ppk file that can be loaded by PuTTY
-5. Exist PuttyGen
+5. Exit PuttyGen
 6. Launch PuTTY
 7. Configure settings for a new session
 8. Under Connection -> SSH -> Auth, find and open the .ppk file you just saved
