@@ -161,6 +161,10 @@ using the Rust compiler.
 When the Python packages are installed below, the Cryptography package will be built using the Rust compiler.
 On a Raspberry Pi Zero W (not Zero 2 W), the build can take up to four (4) hours!
 
+You can uninstall the Rust compiler **AFTER** the Python packages are installed below by issuing hte command:
+
+`$sudo rustup self uninstall`
+
 ## Create Virtual Environment and Install Python Packages
 `$cd ~/vctrl`
 
