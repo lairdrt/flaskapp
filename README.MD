@@ -148,6 +148,19 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 
 `$git clone https://github.com/lairdrt/vctrl.git`
 
+## Install Rust Compiler for Python Cryptography Package
+The Python Cryptography package is required for the pyOpenSSL package which is required for OAuth authorization.
+OAuth is used to log into the Flask application via third-party providers such as GitHub. The Python Cryptography package is built 
+using the Rust compiler.
+
+`$sudo curl https://sh.rustup.rs -sSf | sh`
+1. Select option 1 (the default)
+
+`$source $HOME/.cargo/env`
+
+When the Python packages are installed below, the Cryptography package will be built using the Rust compiler.
+On a Raspberry Pi Zero W (not Zero 2 W), the build can take up to four (4) hours!
+
 ## Create Virtual Environment and Install Python Packages
 `$cd ~/vctrl`
 
