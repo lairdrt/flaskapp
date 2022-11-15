@@ -41,7 +41,7 @@ Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but 
 monitor and keyboard to the Raspberry Pi so that you can log into the OS and make changes.
 
 1. Connect the monitor to the Raspberry Pi using the micro-HDMI adapter and a standard HDMI cable
-2. Connect the wireless USB keyboard/mouse dongle to the Raspberry Pi using the micro-USB adapter
+2. Connect the wireless USB keyboard/mouse dongle to the Raspberry Pi using the USB micro adapter
 3. Apply power to the Raspberry Pi (should see green lights flash as OS is loaded)
 
 You should be able to log into the Raspberry Pi using the default credentials: Username='pi' Password='raspberry'
