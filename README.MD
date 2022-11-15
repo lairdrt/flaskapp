@@ -15,11 +15,22 @@ If you have issues setting up either the wireless LAN connection or SSH, you may
 5. [Computer monitor](https://www.samsung.com/ca/monitors/curved/curved-monitor-27-inch-lc27f396fhnxza/)
 6. [Wireless USB keyboard/mouse/dongle](https://www.amazon.com/Logitech-MK270-Wireless-Keyboard-Mouse/dp/B079JLY5M5/ref=sr_1_4)
 
-And you'll usually need some form of development station, assuming a laptop.
+And you'll usually need some form of development station, assuming a laptop computer.
 
 ## Install Raspberry Pi OS on the MicroSD Card
-1. Download and install [Raspberry Pi OS imager software](https://www.raspberrypi.com/software/)
-
+1. Insert MicroSD card into the card reader
+2. Insert the card reader into the laptop
+3. Download and install [Raspberry Pi OS imager software](https://www.raspberrypi.com/software/) on the laptop
+4. Launch the imager program
+5. Choose the operating system: Raspberry Pi OS Lite 32-bit
+6. Choose the storage device: MicroSD Card (you just plugged in)
+7. Type CTRL + Shift + X to preconfigure the OS
+- Set the locale
+- Set the wireless LAN SSID and passphrase
+- Set the SSH public key
+8. Select WRITE
+9. After the write operation is complete, exit the imager program
+10. Eject the USB card reader and remove the SD card from the reader
 
 ## Update OS
 `$sudo apt-get -y update`
