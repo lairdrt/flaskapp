@@ -1,6 +1,7 @@
 # Valve Controller Flask Template
 The Valve Controller Flask Template contains the framework for quickly building a full-stack application using your choice of
 database (PostgreSQL, MySQL, SQLite3) along with secure login and Bootstrap (5) HTML components.
+
 ## New Raspberry Pi Configuration
 `$sudo apt-get -y update`
 
