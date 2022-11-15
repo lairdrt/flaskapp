@@ -132,7 +132,7 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 6. Fill in the fields regarding the key (use id_rsa.pub key from previous step)
 7. Select 'Add SSH key'
 
-## Install Python
+## Install Python and Other Tools
 `$sudo apt-get -y install python3 python3-venv python3-dev`
 
 `$sudo apt-get -y install supervisor nginx git`
