@@ -22,7 +22,7 @@ server {
 
     location /static {
         # handle static files directly, without forwarding to the application
-        alias /home/vctrl/app/static;
+        alias /home/webapp/vctrl/app/static;
         expires 30d;
     }
 }
@@ -33,8 +33,8 @@ server {
     server_name _;
 
     # location of the self-signed SSL certificate
-    ssl_certificate /home/vctrl/deployment/certs/domain.crt;
-    ssl_certificate_key /home/vctrl/deployment/certs/domain.key;
+    ssl_certificate /home/webapp/vctrl/deployment/certs/domain.crt;
+    ssl_certificate_key /home/webapp/vctrl/deployment/certs/domain.key;
 
     # write access and error logs to /var/log
     access_log /var/log/vctrl-access-ssl.log;
@@ -52,7 +52,7 @@ server {
 
     location /static {
         # handle static files directly, without forwarding to the application
-        alias /home/vctrl/app/static;
+        alias /home/webapp/vctrl/app/static;
         expires 30d;
     }
 }
