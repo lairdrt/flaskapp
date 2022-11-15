@@ -17,12 +17,15 @@ If you have issues setting up either the microcomputer wireless LAN connection o
 
 And you'll usually need some form of development station, assuming a laptop.
 
-## New Raspberry Pi Configuration
+## Install Raspberry Pi OS on the MicroSD Card
+
+## Update OS
 `$sudo apt-get -y update`
 
 `$sudo apt-get -y upgrade`
+## Configure Wireless LAN
 
-## SSH Configuration for New Installation
+## Configure SSH
 https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 
 ### Enable SSH on Raspberry Pi
@@ -80,7 +83,7 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 6. Fill in the fields regarding the key (use id_rsa.pub key from previous step)
 7. Select 'Add SSH key'
 
-## Installing Python
+## Install Python
 `$sudo apt-get -y install python3 python3-venv python3-dev`
 
 `$sudo apt-get -y install supervisor nginx git`
