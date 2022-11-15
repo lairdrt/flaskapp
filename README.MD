@@ -14,6 +14,8 @@ If you have issues setting up either the wireless LAN connection or SSH, you may
 
 5. [Computer monitor](https://www.samsung.com/ca/monitors/curved/curved-monitor-27-inch-lc27f396fhnxza/)
 6. [Wireless USB keyboard/mouse/dongle](https://www.amazon.com/Logitech-MK270-Wireless-Keyboard-Mouse/dp/B079JLY5M5/ref=sr_1_4)
+7. [USB Micro to USB adapter](https://www.adafruit.com/product/2910)
+8. [Micro-HDMI to HDMI adapter](https://www.adafruit.com/product/1358)
 
 And you'll usually need some form of development station, assuming a laptop computer.
 
@@ -38,7 +40,7 @@ And you'll usually need some form of development station, assuming a laptop comp
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
 monitor and keyboard to the Raspberry Pi so that you can log into the OS and make changes.
 
-1. Connect the monitor to the Raspberry Pi using the micro-MDMI adapter and a standard HDMI cable
+1. Connect the monitor to the Raspberry Pi using the micro-HDMI adapter and a standard HDMI cable
 2. Connect the wireless USB keyboard/mouse dongle to the Raspberry Pi using the micro-USB adapter
 3. Apply power to the Raspberry Pi (should see green lights flash as OS is loaded)
 
