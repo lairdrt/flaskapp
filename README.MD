@@ -31,6 +31,9 @@ And you'll usually need some form of development station, assuming a laptop comp
 8. Select WRITE
 9. After the write operation is complete, exit the imager program
 10. Eject the USB card reader and remove the MicroSD card from the reader
+11. **Make sure power is OFF** on the Raspberry Pi
+12. Insert the MicroSD card into the Raspberry Pi memory card slot
+13. Apply power to the Raspberry Pi (should see green lights flash as OS is loaded)
 
 ## Update OS
 `$sudo apt-get -y update`
