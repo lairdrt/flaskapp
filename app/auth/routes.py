@@ -47,7 +47,6 @@ def login():
             return abort(400)
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home.index')
-        logger.debug('next_page:' + str(next_page))
         return redirect(next_page)
     return render_template('auth/login.html', title='Sign In', form=form)
 
