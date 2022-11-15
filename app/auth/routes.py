@@ -6,6 +6,7 @@ from app.auth import bp
 from app.auth.forms import LoginForm
 from app.database.models import User
 from app.log.logger import logger, err
+from secrets import token_urlsafe
 from urllib.parse import urlparse, urljoin
 from werkzeug.urls import url_parse
 import app.globals.constants as CONST
@@ -30,14 +31,15 @@ def login_github():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        logger.debug(err(ERB+1)+'S3')
         user = db_session.query(User).filter_by(username=form.username.data).first()
         if user is None:
-            logger.debug(err(ERB+1)+'Invalid username')
-            return render_template('auth/login.html', msg='Invalid username', form=form)
+            return redirect(url_for('auth.login'))
         elif (not user.check_password(form.password.data)) and (not user.check_recovery_password(form.password.data)):
-            logger.debug(err(ERB+1)+'Invalid username')
-            return render_template('auth/login.html', msg='Invalid password', form=form)
+            return redirect(url_for('auth.login'))
+        db_session.query(User).filter(User.id == user.id).update(
+            {User.session_token: token_urlsafe(CONST.SESSION_TOKEN_LEN)},
+            synchronize_session = False)
+        db_session.commit()
         login_user(user)
         confirm_login()
         next_page = request.args.get('next')
@@ -45,11 +47,9 @@ def login():
             return abort(400)
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home.index')
+        logger.debug('next_page:' + str(next_page))
         return redirect(next_page)
-    logger.debug(err(ERB+1)+'username:'+str(form.username.data))
-    logger.debug(err(ERB+1)+'password:'+str(form.password.data))
-    logger.debug(err(ERB+1)+'csrf_token:'+str(form.csrf_token.data))
-    return render_template('auth/login.html', title='Sign in', form=form)
+    return render_template('auth/login.html', title='Sign In', form=form)
 
 # APP route: use shared session
 @bp.route('/logout')

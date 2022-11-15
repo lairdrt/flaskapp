@@ -30,14 +30,14 @@ class User(UserMixin, Base):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
     username = Column(String(64), index=True, unique=True)
-    email = Column(String(120), index=True, unique=True)
+    email = Column(String(256), index=True, unique=True)
     password_hash = Column(String(128))
     recovery_password_hash = Column(String(128))
     session_token = Column(String(CONST.SESSION_TOKEN_LEN+10), index=True)
-    oauth_github = Column(String(100), nullable=True)
+    oauth_github = Column(String(128), nullable=True)
 
     def __repr__(self):
-        return '<User {}>'.format(self.id)
+        return '<User.id {}>'.format(self.id)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -65,4 +65,4 @@ class OAuth(OAuthConsumerMixin, Base):
     token = Column(String(256))
 
     def __repr__(self):
-        return '<OAuth {}>'.format(self.user_id)
+        return '<OAuth.id {}>'.format(self.id)

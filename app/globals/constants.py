@@ -7,7 +7,7 @@ VERSION = '0.10'
 # Version release date
 RELEASED = '11 November 2022'
 
-# Max session token length (+7)
+# Max session token length
 SESSION_TOKEN_LEN = 20
 
 # File paths

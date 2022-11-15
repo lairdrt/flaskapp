@@ -5,6 +5,7 @@ from flask_dance.consumer.storage.sqla import SQLAlchemyStorage
 from app import db_session
 from app.instance.config import Config
 from app.database.models import User, OAuth
+from app.log.logger import logger, err
 from sqlalchemy.orm.exc import NoResultFound
 
 github_bp = make_github_blueprint(
@@ -22,13 +23,19 @@ github_bp = make_github_blueprint(
 @oauth_authorized.connect_via(github_bp)
 def github_logged_in(blueprint, token):
     info = github.get("/user")
+    logger.debug("github_logged_in: SP1")
     if info.ok:
+        logger.debug("github_logged_in: SP2")
         account_info = info.json()
         username = account_info["login"]
         try:
+            logger.debug("github_logged_in: SP3")
             user = db_session.query(User).filter_by(oauth_github=username).one()
+            logger.debug("github_logged_in: user.username:" + str(user.username))
+            logger.debug("github_logged_in: user.oauth_github:" + str(user.oauth_github))
             login_user(user)
         except NoResultFound:
+            logger.debug("github_logged_in: SP4")
             # Save to db
             user = User()
             user.username = '(gh)' + username

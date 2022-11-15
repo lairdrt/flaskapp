@@ -19,7 +19,7 @@ def index():
             pass
         except Exception as ex:
             raise
-    return redirect(url_for('home.index'))
+    return render_template('home/index.html', title='Dashboard')
 
 # ASYNCH route: need separate session
 @bp.route('/index/getstatus', methods=['GET'])

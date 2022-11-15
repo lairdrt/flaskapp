@@ -10,12 +10,19 @@ def init_app(app):
 
     @database.command()
     def create():
-        # Creates all database tables in model
         print('Dropping all tables...')
         Base.metadata.drop_all(bind=engine)
         print('Creating all tables...')
         Base.metadata.create_all(bind=engine)
+        print('Adding default user(s)...')
+        with ManagedSession() as db_session:
+            u = User(username='rtlaird', email='robin.laird@cox.net')
+            u.set_password('Thx1138!')
+            u.set_recovery_password('B54_up@9!Z*{;x6-')
+            db_session.add(u)
+            db_session.commit()
         print("Done")
+        return
 
     @database.command()
     def change():
