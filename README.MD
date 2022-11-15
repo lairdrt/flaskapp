@@ -73,6 +73,7 @@ network={
         key_mgmt=WPA-PSK
 }
 ```
+
 ## Configure SSH
 https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 
