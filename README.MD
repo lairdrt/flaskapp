@@ -38,12 +38,21 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 ### Add SSH Key to PuTTY Configuration
 Install PuTTY from https://www.putty.org/
 
-Follow the instructions at the link below to add your private key generated above (id_rsa) to use in your PuTTY session.
+Follow the instructions at the link below to add your **private key** generated above (id_rsa) to use in your PuTTY session.
 
 https://docs.oracle.com/en/cloud/paas/goldengate-cloud/tutorial-change-private-key-format/
+1. Launch the PuTYTGen program
+2. Under 'Parameters', select 'RSA' and use 2048 for bits in generated key
+3. Load your existing private key that you generated above (and saved locally)
+4. After you've loaded your existing private key, save the new key as a .ppk file that can be loaded by PuTTY
+5. Exist PuttyGen
+6. Launch PuTTY
+7. Configure settings for a new session
+8. Under Connection -> SSH -> Auth, find and open the .ppk file you just saved
+9. You should now be able to connect to your Raspberry Pi using SSH
 
 ### Add SSH Key to GitHib Account
-Follow the instructions at the link below to add your public key to GitHub so that you can manage your Raspberry Pi software.
+Follow the instructions at the link below to add your **public key** to GitHub so that you can manage your Raspberry Pi software.
 
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 1. Log into your [GitHub](https://github.com) account
