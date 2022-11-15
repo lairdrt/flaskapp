@@ -16,6 +16,7 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 3. Select 'Yes'
 4. Select 'Ok'
 5. Select 'Finish'
+
 ### Generate SSH Public/Private Key
 `$cd ~`
 
@@ -42,6 +43,8 @@ Follow the instructions at the link below to add your private key generated abov
 https://docs.oracle.com/en/cloud/paas/goldengate-cloud/tutorial-change-private-key-format/
 
 ### Add SSH Key to GitHib Account
+Follow the instructions at the link below to add your public key to GitHub so that you can manage your Raspberry Pi software.
+
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 1. Log into your [GitHub](https://github.com) account
 2. Select dropdown for your account
@@ -53,22 +56,29 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 
 ## Installing Python
 `$sudo apt-get -y install python3 python3-venv python3-dev`
+
 `$sudo apt-get -y install supervisor nginx git`
+
 `$sudo pip install --upgrade pip`
 
 ## Install MySQL DB (Maria DB)
 `$sudo apt install mariadb-server`
+
 `$sudo mysql_secure_installation`
-1. Answer "N" to prompts regarding setting/changing root password
-2. Answer “Y” to all other prompts
+1. Answer 'N' to prompts regarding setting/changing root password
+2. Answer 'Y' to all other prompts
 
 ## Make Database
-```
-$sudo mysql -u root -p
->CREATE DATABASE database_name;
->CREATE USER 'database_user_name'@'localhost' IDENTIFIED BY 'database_user_password';
->GRANT ALL PRIVILEGES ON database_name.* TO 'database_user_name'@'localhost';
->ALTER USER database_user_name@localhost IDENTIFIED BY 'database_user_password'; # as necessary
->FLUSH PRIVILEGES;
-```
+`$sudo mysql -u root -p`
+
+`>CREATE DATABASE database_name;`
+
+`>CREATE USER 'database_user_name'@'localhost' IDENTIFIED BY 'database_user_password';`
+
+`>GRANT ALL PRIVILEGES ON database_name.* TO 'database_user_name'@'localhost';`
+
+`>ALTER USER database_user_name@localhost IDENTIFIED BY 'database_user_password'; # as necessary`
+
+`>FLUSH PRIVILEGES;`
+
 &copy; 2020-2023 Same Day Rules
