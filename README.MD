@@ -50,12 +50,29 @@ You should be able to log into the Raspberry Pi using the default credentials: U
 `$sudo apt-get -y update`
 
 `$sudo apt-get -y upgrade`
+
 ## Configure Wireless LAN
 `$sudo raspi-config`
 1. Select 'Localisation Options'
-2. Select 'WLAN Country' (US is under 'US United States')
-3. Select 'Finish'
+2. Select 'WLAN Country'
+3. Select your country
+4. Select 'Finish'
 
+Replace the contents of the wpa_supplicant.conf file with the following.
+
+`$sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=US
+
+network={
+        ssid="yourwlanid"
+        scan_ssid=1
+        psk="yourwlanpassphrase"
+        key_mgmt=WPA-PSK
+}
+```
 ## Configure SSH
 https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 
@@ -158,6 +175,5 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 `>ALTER USER database_user_name@localhost IDENTIFIED BY 'database_user_password'; # as necessary`
 
 `>FLUSH PRIVILEGES;`
-
 
 &copy; 2020-2023 Same Day Rules
