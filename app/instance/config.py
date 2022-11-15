@@ -35,4 +35,5 @@ class Config(object):
     ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets') # DOM assets management
     GITHUB_ID = os.getenv('GITHUB_ID')
     GITHUB_SECRET = os.getenv('GITHUB_SECRET')
-    SOCIAL_AUTH_GITHUB = GITHUB_ID and GITHUB_SECRET # enable/disable Github OAuth login    
+    SOCIAL_AUTH_GITHUB = GITHUB_ID and GITHUB_SECRET # enable/disable Github OAuth login
+    OAUTHLIB_INSECURE_TRANSPORT = os.environ.get('OAUTHLIB_INSECURE_TRANSPORT') == 1

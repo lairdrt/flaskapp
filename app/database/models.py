@@ -60,6 +60,9 @@ class OAuth(OAuthConsumerMixin, Base):
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey("user.id", ondelete="cascade"), nullable=False)
     user = relationship(User)
+    provider = Column(String(128))
+    created_at = Column(UTCDateTime)
+    token = Column(String(256))
 
     def __repr__(self):
         return '<OAuth {}>'.format(self.user_id)
