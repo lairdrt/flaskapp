@@ -19,7 +19,7 @@ And you'll usually need some form of development station, assuming a laptop comp
 
 ## Install Raspberry Pi OS on the MicroSD Card
 1. Insert MicroSD card into the card reader
-2. Insert the card reader into the laptop
+2. Insert the USB card reader into the laptop
 3. Download and install [Raspberry Pi OS imager software](https://www.raspberrypi.com/software/) on the laptop
 4. Launch the imager program
 5. Choose the operating system: Raspberry Pi OS Lite 32-bit
