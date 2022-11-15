@@ -12,8 +12,8 @@ The instructions below describe how to commission a (Raspberry Pi) microcomputer
 
 If you have issues setting up either the microcomputer wireless LAN connection or SSH, you may also need:
 
-6. [Computer monitor](https://www.samsung.com/ca/monitors/curved/curved-monitor-27-inch-lc27f396fhnxza/)
-7. [Wireless USB keyboard/mouse/dongle](https://www.amazon.com/Logitech-MK270-Wireless-Keyboard-Mouse/dp/B079JLY5M5/ref=sr_1_4)
+5. [Computer monitor](https://www.samsung.com/ca/monitors/curved/curved-monitor-27-inch-lc27f396fhnxza/)
+6. [Wireless USB keyboard/mouse/dongle](https://www.amazon.com/Logitech-MK270-Wireless-Keyboard-Mouse/dp/B079JLY5M5/ref=sr_1_4)
 
 And you'll usually need some form of development station, assuming a laptop.
 
