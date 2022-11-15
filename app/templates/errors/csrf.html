@@ -1,7 +1,7 @@
 {% extends 'layouts/base.html' %}
 {% block content %}
     <h1>CSRF Error</h1>
-    <p>There is an issue with your webpage session.</p>
+    <p>There is an issue with the webpage session.</p>
     <p>{{reason}}</p>
-    <p><a href="{{url_for('auth.login')}}">Please login again</a></p>
+    <p><a href="{{url_for('auth.login')}}">Please login again.</a></p>
 {% endblock %}

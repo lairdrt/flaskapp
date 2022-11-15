@@ -55,14 +55,13 @@ class User(UserMixin, Base):
         # Will be unique for each user session
         return str(self.session_token)
 
+# OAuth users
+# https://flask-dance.readthedocs.io/en/latest/_modules/flask_dance/consumer/storage/sqla.html#
 class OAuth(OAuthConsumerMixin, Base):
     __tablename__ = 'oauth'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey("user.id", ondelete="cascade"), nullable=False)
     user = relationship(User)
-    provider = Column(String(128))
-    created_at = Column(UTCDateTime)
-    token = Column(String(256))
 
     def __repr__(self):
         return '<OAuth.id {}>'.format(self.id)
