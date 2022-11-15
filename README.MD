@@ -10,7 +10,7 @@ The instructions below describe how to commission a (Raspberry Pi) microcomputer
 3. [MicroSD memory card](https://www.tomshardware.com/best-picks/raspberry-pi-microsd-cards)
 4. [MicroSD USB card reader](https://www.amazon.com/Adapter-Standard-Connector-Smartphones-Function/dp/B01BXSKPES/ref=asc_df_B01BXSKPES)
 
-If you have issues setting up either the microcomputer wireless LAN connection or SSH, you may also need:
+If you have issues setting up either the wireless LAN connection or SSH, you may also need:
 
 5. [Computer monitor](https://www.samsung.com/ca/monitors/curved/curved-monitor-27-inch-lc27f396fhnxza/)
 6. [Wireless USB keyboard/mouse/dongle](https://www.amazon.com/Logitech-MK270-Wireless-Keyboard-Mouse/dp/B079JLY5M5/ref=sr_1_4)
@@ -18,6 +18,8 @@ If you have issues setting up either the microcomputer wireless LAN connection o
 And you'll usually need some form of development station, assuming a laptop.
 
 ## Install Raspberry Pi OS on the MicroSD Card
+1. Download and install [Raspberry Pi OS imager software](https://www.raspberrypi.com/software/)
+
 
 ## Update OS
 `$sudo apt-get -y update`
