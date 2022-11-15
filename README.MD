@@ -8,8 +8,9 @@ The instructions below describe how to commission a (Raspberry Pi) microcomputer
 1. [Raspberry Pi](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
 2. [Power supply](https://www.raspberrypi.com/products/micro-usb-power-supply/)
 3. [MicroSD memory card](https://www.tomshardware.com/best-picks/raspberry-pi-microsd-cards)
-4. [Computer monitor](https://www.samsung.com/ca/monitors/curved/curved-monitor-27-inch-lc27f396fhnxza/)
-5. [Wireless USB keyboard/mouse/dongle](https://www.amazon.com/Logitech-MK270-Wireless-Keyboard-Mouse/dp/B079JLY5M5/ref=sr_1_4)
+4. [MicroSD USB card reader](https://www.amazon.com/Adapter-Standard-Connector-Smartphones-Function/dp/B01BXSKPES/ref=asc_df_B01BXSKPES)
+5. [Computer monitor](https://www.samsung.com/ca/monitors/curved/curved-monitor-27-inch-lc27f396fhnxza/)
+6. [Wireless USB keyboard/mouse/dongle](https://www.amazon.com/Logitech-MK270-Wireless-Keyboard-Mouse/dp/B079JLY5M5/ref=sr_1_4)
 
 ## New Raspberry Pi Configuration
 `$sudo apt-get -y update`
