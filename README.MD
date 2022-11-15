@@ -33,7 +33,16 @@ And you'll usually need some form of development station, assuming a laptop comp
 10. Eject the USB card reader and remove the MicroSD card from the reader
 11. **Make sure power is OFF** on the Raspberry Pi
 12. Insert the MicroSD card into the Raspberry Pi memory card slot
-13. Apply power to the Raspberry Pi (should see green lights flash as OS is loaded)
+
+## Connect Monitor/Keyboard to Raspberry Pi
+Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
+monitor and keyboard to the Raspberry Pi so that you can log into the OS and make changes.
+
+1. Connect the monitor to the Raspberry Pi using the micro-MDMI adapter and a standard HDMI cable
+2. Connect the wireless USB keyboard/mouse dongle to the Raspberry Pi using the micro-USB adapter
+3. Apply power to the Raspberry Pi (should see green lights flash as OS is loaded)
+
+You should be able to log into the Raspberry Pi using the default credentials: Username='pi' Password='raspberry'
 
 ## Update OS
 `$sudo apt-get -y update`
