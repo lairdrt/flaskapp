@@ -35,6 +35,7 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 `$ssh -T git@github.com`
 1. Answer 'yes' to question about wanting to connect
 2. This should add GitHub to ~/.ssh/known_hosts file
+
 ### Add SSH Key to PuTTY Configuration
 Install PuTTY from https://www.putty.org/
 
@@ -69,6 +70,15 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 `$sudo apt-get -y install supervisor nginx git`
 
 `$sudo pip install --upgrade pip`
+
+## Setup git Repository
+`$mkdir vctrl`
+
+`cd ~/vctrl`
+
+`$git init`
+
+`$git clone ...`
 
 ## Install MySQL DB (Maria DB)
 `$sudo apt install mariadb-server`
