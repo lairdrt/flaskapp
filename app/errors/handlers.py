@@ -3,6 +3,10 @@ from flask_wtf.csrf import CSRFError
 from app import db_session
 from app.errors import bp
 
+@bp.app_errorhandler(400)
+def bad_request_error(error):
+    return render_template('errors/400.html'), 403
+
 @bp.app_errorhandler(403)
 def forbidden_error(error):
     return render_template('errors/403.html'), 403
