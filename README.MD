@@ -209,7 +209,7 @@ Steps involved and what they produce:
 3. Install the root certificate on Windows 10 -> myCA.pem added to Trusted Root Certification Authorities
 4. Generate a private key for the dev site certificate -> vctrl.key
 5. Generate a certificate signing request for the dev site certificate -> vctrl.csr
-6. Create an X509 V3 certificate extension config file to set the Subject Alternative Names (SAN) for the dev site certificate.
+6. Create an X509 V3 certificate extension config file to set the Subject Alternative Names (SAN) for the dev site certificate
 7. Generate the dev site certificate using the CSR, the CA private key, the CA certificate, and the config file -> vctrl.crt
 8. Configure dev site web server to use private key and signed certificate
 
