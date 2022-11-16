@@ -20,21 +20,28 @@ If you have issues setting up either the wireless LAN connection or SSH, you may
 And you'll usually need some form of development station, assuming a laptop computer.
 
 ## Install Raspberry Pi OS on the MicroSD Card
+In one of the steps below, you will need a known SSH public key that you use with Secure Shell. You'll need to open the key file and then copy the contents
+to the clipboard so that you can paste it into a field during OS configuration below.
+
 1. Insert MicroSD card into the card reader
 2. Insert the USB card reader into the laptop
 3. Download and install [Raspberry Pi OS imager software](https://www.raspberrypi.com/software/) on the laptop
 4. Launch the imager program
-5. Choose the operating system: Raspberry Pi OS Lite 32-bit
-6. Choose the storage device: MicroSD Card (you just plugged in)
-7. Type CTRL + Shift + X to preconfigure the OS
-- Set the locale
-- Set the wireless LAN SSID and passphrase
-- Set the SSH public key
-8. Select WRITE
-9. After the write operation is complete, exit the imager program
-10. Eject the USB card reader and remove the MicroSD card from the reader
-11. **Make sure power is OFF** on the Raspberry Pi
-12. Insert the MicroSD card into the Raspberry Pi memory card slot
+5. Select CHOOSE OS then Raspberry Pi OS (other) then Raspberry Pi OS Lite (32-bit)
+7. Select USB MASS STORAGE then select the USB mass storage device for your card reader
+8. Type CTRL + Shift + X to preconfigure the OS
+- Select Set hostname then enter a short name for the Raspberry Pi
+- Select Enable SSH then Allow public-key authentication only
+- Select Set authorized_keys for 'pi' field and paste your known SSH public key here
+- Select Configure wireless LAN then enter the name of the network in the SSID field
+- Enter the password for the wireless LAN and then select the Wireless LAN country
+- Set locale settings as necessary
+- Finally, select SAVE
+9. Select WRITE
+10. After the write operation is complete, exit the imager program
+11. Eject the USB card reader and remove the MicroSD card from the reader
+12. **Make sure power is OFF** on the Raspberry Pi
+13. Insert the MicroSD card into the Raspberry Pi memory card slot
 
 ## Connect Monitor/Keyboard to Raspberry Pi
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
