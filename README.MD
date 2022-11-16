@@ -30,7 +30,7 @@ And you'll usually need some form of development station, assuming a laptop comp
 - Set the locale
 - Set the wireless LAN SSID and passphrase
 - Set the SSH public key
-8. Select `WRITE`
+8. Select ***WRITE***
 9. After the write operation is complete, exit the imager program
 10. Eject the USB card reader and remove the MicroSD card from the reader
 11. **Make sure power is OFF** on the Raspberry Pi
@@ -53,10 +53,10 @@ You should be able to log into the Raspberry Pi using the default credentials: U
 
 ## Configure Wireless LAN
 `$sudo raspi-config`
-1. Select 'Localisation Options'
-2. Select 'WLAN Country'
+1. Select ***Localisation Options***
+2. Select ***WLAN Country***
 3. Select your country
-4. Select 'Finish'
+4. Select ***Finish***
 
 Replace the contents of the wpa_supplicant.conf file with the following.
 
