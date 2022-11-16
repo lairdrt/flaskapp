@@ -204,6 +204,8 @@ https://www.openssl.org/docs/man3.0/man5/config.html
 
 https://www.humankode.com/ssl/create-a-selfsigned-certificate-for-nginx-in-5-minutes/
 
+`$cd ~/vctrl/deployment/certs`
+
 `$sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout domain.key -out domain.crt -config vctrl.conf`
     
 &copy; 2020-2023 Same Day Rules
