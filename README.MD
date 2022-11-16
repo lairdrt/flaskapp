@@ -283,9 +283,8 @@ An optional company name []:Same Day Rules
 ```
 RESULTS IN: vctrl.csr
 
-### 6. Create an X509 V3 certificate extension config file to set the Subject Alternative Names (SAN) for the dev site certificate:
-
-We’ll be running openssl x509 because the x509 command allows us to edit certificate trust settings.
+### 6. Create an X509 V3 certificate extension config file:
+We’ll be running `openssl x509` because the x509 command allows us to edit certificate trust settings, and allows us to set the Subject Alternative Names (SAN) for the dev site certificate.
 
 `$ sudo nano vctrl.ext`
 ```
@@ -303,7 +302,8 @@ IP.2 = 192.168.1.45
 ```
 RESULTS IN: vctrl.ext
 
-### 7. Generate the dev site certificate using the CSR, the CA private key, the CA certificate, and the config file:
+### 7. Generate the dev site certificate:
+Using the CSR, the CA private key, the CA certificate, and the config file, generate the signed dev site certificate.
 
 `$sudo openssl x509 -req -in vctrl.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial -out vctrl.crt -days 825 -sha256 -extfile vctrl.ext`
 
