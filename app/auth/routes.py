@@ -24,9 +24,13 @@ def is_safe_url(target):
 def login_github():
     if not github.authorized:
         return redirect(url_for("github.login"))
-    res = github.get("/user")
-    return redirect(url_for('home.index'))
+    resp = github.get("/user")
+    if resp.ok:
+        return redirect(url_for('home.index'))
+    else:
+        return abort(400)
 
+# APP route: use shared session
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
