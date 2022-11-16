@@ -224,7 +224,7 @@ File summary:
 
 `$sudo openssl genrsa -des3 -out myCA.key 2048`
 
-`Enter pass phrase for junk.key:yourpassphrase`
+`Enter pass phrase for myCA.key:yourpassphrase`
 
 RESULTS IN: myCA.key
 
@@ -244,7 +244,7 @@ RESULTS IN: myCA.pem
 
 ### 3. Install the root certificate on Windows 10:
 
-Open the “Microsoft Management Console” by using the Windows + R keyboard combination, typing mmc and clicking Open
+Open the Microsoft Management Console by using the Windows + R keyboard combination, typing 'mmc' and clicking Open
 1. Go to File > Add/Remove Snap-in
 2. Click Certificates and Add
 3. Select Computer Account and click Next
@@ -253,7 +253,8 @@ Open the “Microsoft Management Console” by using the Windows + R keyboard co
 6. Double-click Certificates (local computer) to expand the view
 7. Select Trusted Root Certification Authorities, right-click on Certificates in the middle column under “Object Type” and select All Tasks then Import
 8. Click Next then Browse. Change the certificate extension dropdown next to the filename field to All Files (*.*) and locate the myCA.pem file, click Open, then Next
-9. Select Place all certificates in the following store. “Trusted Root Certification Authorities store” is the default. Click Next then click Finish to complete the wizard.
+9. Select Place all certificates in the following store > Trusted Root Certification Authorities (the default store)
+10. Click Next then click Finish to complete the wizard
 
 Verify that the CA certificate is listed under Trusted Root Certification Authorities > Certificates.
 
