@@ -79,11 +79,11 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 
 ### Enable SSH on Raspberry Pi
 `$sudo raspi-config`
-1. Select 'Interface Options'
-2. Select 'SSH'
-3. Select 'Yes'
-4. Select 'Ok'
-5. Select 'Finish'
+1. Select ***Interface Options***
+2. Select ***SSH***
+3. Select ***Yes***
+4. Select ***Ok***
+5. Select ***Finish***
 
 ### Generate SSH Public/Private Key
 `$cd ~`
@@ -101,7 +101,7 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 `$mv id_rsa.pub authorized_keys`
 
 `$ssh -T git@github.com`
-1. Answer 'yes' to question about wanting to connect
+1. Answer ***yes*** to question about wanting to connect
 2. This should add GitHub to ~/.ssh/known_hosts file
 
 ### Add SSH Key to PuTTY Configuration
@@ -111,7 +111,7 @@ Follow the instructions at the link below to add your **private key** generated 
 
 https://docs.oracle.com/en/cloud/paas/goldengate-cloud/tutorial-change-private-key-format/
 1. Launch the PuTYTGen program
-2. Under 'Parameters', select 'RSA' and use 2048 for bits in generated key
+2. Under ***Parameters***, select ***RSA*** and use 2048 for bits in generated key
 3. Load your existing private key that you generated above (and saved locally)
 4. After you've loaded your existing private key, save the new key as a .ppk file that can be loaded by PuTTY
 5. Exit PuttyGen
@@ -126,11 +126,11 @@ Follow the instructions at the link below to add your **public key** to GitHub s
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 1. Log into your [GitHub](https://github.com) account
 2. Select dropdown for your account
-3. Select 'Settings'
-4. Select 'SSH and GPG keys'
-5. Select 'New SSH key'
+3. Select ***Settings
+4. Select ***SSH and GPG keys***
+5. Select ***New SSH key***
 6. Fill in the fields regarding the key (use id_rsa.pub key from previous step)
-7. Select 'Add SSH key'
+7. Select ***Add SSH key***
 
 ## Install Python and Other Tools
 `$sudo apt-get -y install python3 python3-venv python3-dev`
@@ -178,8 +178,8 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 `$sudo apt install mariadb-server`
 
 `$sudo mysql_secure_installation`
-1. Answer 'N' to prompts regarding setting/changing root password
-2. Answer 'Y' to all other prompts
+1. Answer ***N*** to prompts regarding setting/changing root password
+2. Answer ***Y*** to all other prompts
 
 ## Make Database
 `$sudo mysql -u root -p`
@@ -244,7 +244,7 @@ RESULTS IN: myCA.pem
 
 ### 3. Install the root certificate on Windows 10:
 
-Open the Microsoft Management Console by using the Windows + R keyboard combination, typing 'mmc' and clicking Open
+Open the Microsoft Management Console by using the Windows + R keyboard combination, typing ***mmc*** and clicking Open
 1. Go to File > Add/Remove Snap-in
 2. Click Certificates and Add
 3. Select Computer Account and click Next
