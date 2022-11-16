@@ -328,6 +328,14 @@ Edit the Nginx configuration file for your dev web site to use the new private k
 `ssl_certificate /home/webapp/vctrl/deployment/certs/vctrl.crt;`
 
 `ssl_certificate_key /home/webapp/vctrl/deployment/certs/vctrl.key;`
-  
+
+Nginx commands:
+```
+sudo systemctl status nginx
+sudo systemctl stop nginx
+sudo systemctl start nginx
+sudo systemctl reload nginx
+sudo systemctl restart nginx
+```
   
 &copy; 2020-2023 Same Day Rules
