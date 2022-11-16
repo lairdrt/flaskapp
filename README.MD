@@ -55,7 +55,7 @@ You should be able to log into the Raspberry Pi using the default credentials: U
 `$sudo raspi-config`
 1. Select ***Localisation Options***
 2. Select ***WLAN Country***
-3. Select your country
+3. Select ***US United States*** (or your country)
 4. Select ***Finish***
 
 Replace the contents of the wpa_supplicant.conf file with the following.
