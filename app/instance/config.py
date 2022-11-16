@@ -6,6 +6,7 @@ load_dotenv(os.path.join(basedir, '.env'), verbose=True)
 
 # Configuration for all development phases
 class Config(object):
+    # Note that values coming from the environment are basically strings, not numbers nor booleans
     DEBUG = os.environ.get('FLASK_DEBUG') == 'True'
     TESTING = os.environ.get('TESTING') == 'True'
     SERIAL_NUMBER = os.environ.get('SERIAL_NUMBER') or os.urandom(13)
@@ -36,4 +37,4 @@ class Config(object):
     GITHUB_ID = os.getenv('GITHUB_ID')
     GITHUB_SECRET = os.getenv('GITHUB_SECRET')
     SOCIAL_AUTH_GITHUB = GITHUB_ID and GITHUB_SECRET # enable/disable Github OAuth login
-    OAUTHLIB_INSECURE_TRANSPORT = os.environ.get('OAUTHLIB_INSECURE_TRANSPORT') == 1
+    OAUTHLIB_INSECURE_TRANSPORT = os.environ.get('OAUTHLIB_INSECURE_TRANSPORT') == '1'
