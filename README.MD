@@ -214,11 +214,11 @@ Steps involved and what they produce:
 8. Configure dev site web server to use private key and signed certificate
 
 File summary:
-myCA.key : CA root certificate private key (requires passphrase)
-myCA.pem : Signed CA root certificate (installed on machines wanting access to your dev site over HTTPS)
-vctrl.key : Dev site certificate private key
-vctrl.csr : Dev site certificate signing request
-vctrl.crt : Signed dev site certificate (installed on dev site HTTPS web server)
+- myCA.key : CA root certificate private key (requires passphrase)
+- myCA.pem : Signed CA root certificate (installed on machines wanting access to your dev site over HTTPS)
+- vctrl.key : Dev site certificate private key
+- vctrl.csr : Dev site certificate signing request
+- vctrl.crt : Signed dev site certificate (installed on dev site HTTPS web server)
 
 1. Generate a private key for the root certificate:
 
