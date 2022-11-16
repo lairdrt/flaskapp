@@ -34,12 +34,14 @@ nosetests.xml
 .project
 .pydevproject
 
+# Flask app
 venv
 app.db
 logs/*
 uploads/*
 backup/*
-deployment/certs
+*.key
+*.crt
 .env
 .csv
 
