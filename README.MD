@@ -73,6 +73,7 @@ network={
         key_mgmt=WPA-PSK
 }
 ```
+Reboot the Raspberry Pi to load the WLAN settings.
 
 ## Configure SSH
 https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
