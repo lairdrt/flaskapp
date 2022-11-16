@@ -199,13 +199,123 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 
 `$sudo cp ~/vctrl/deployment/supervisor/vctrl.conf /etc/supervisor/conf.d/vctrl.conf`
 
-## Create Self-Signed Certificate for Nginx
-https://www.openssl.org/docs/man3.0/man5/config.html
+## Create Your Own SSL Certificate Authority for Serving HTTPS from Your Private Network
 
-https://www.humankode.com/ssl/create-a-selfsigned-certificate-for-nginx-in-5-minutes/
+https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
 
-`$cd ~/vctrl/deployment/certs`
+Steps involved and what they produce:
+1. Generate a private key for the root certificate -> myCA.key
+2. Generate the root certificate using the private key -> myCA.pem
+3. Install the root certificate on Windows 10 -> myCA.pem added to Trusted Root Certification Authorities
+4. Generate a private key for the dev site certificate -> vctrl.key
+5. Generate a certificate signing request for the dev site certificate -> vctrl.csr
+6. Create an X509 V3 certificate extension config file to set the Subject Alternative Names (SAN) for the dev site certificate.
+7. Generate the dev site certificate using the CSR, the CA private key, the CA certificate, and the config file -> vctrl.crt
+8. Configure dev site web server to use private key and signed certificate
 
-`$sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout domain.key -out domain.crt -config vctrl.conf`
-    
+File summary:
+myCA.key : CA root certificate private key (requires passphrase)
+myCA.pem : Signed CA root certificate (installed on machines wanting access to your dev site over HTTPS)
+vctrl.key : Dev site certificate private key
+vctrl.csr : Dev site certificate signing request
+vctrl.crt : Signed dev site certificate (installed on dev site HTTPS web server)
+
+1. Generate a private key for the root certificate:
+
+$sudo openssl genrsa -des3 -out myCA.key 2048
+Passphrase: yourpassphrase
+
+RESULTS IN: myCA.key
+
+2. Generate the root certificate using the private key:
+
+$sudo openssl req -x509 -new -nodes -key myCA.key -sha256 -days 1825 -out myCA.pem
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:California
+Locality Name (eg, city) []:San Diego
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Same Day Rules
+Organizational Unit Name (eg, section) []:Development
+Common Name (e.g. server FQDN or YOUR name) []:Same Day Rules Root
+Email Address []:support@samedayrules.com
+
+RESULTS IN: myCA.pem
+
+3. Install the root certificate on Windows 10:
+
+Open the “Microsoft Management Console” by using the Windows + R keyboard combination, typing mmc and clicking Open
+1. Go to File > Add/Remove Snap-in
+2. Click Certificates and Add
+3. Select Computer Account and click Next
+4. Select Local Computer then click Finish
+5. Click OK to go back to the MMC window
+6. Double-click Certificates (local computer) to expand the view
+7. Select Trusted Root Certification Authorities, right-click on Certificates in the middle column under “Object Type” and select All Tasks then Import
+8. Click Next then Browse. Change the certificate extension dropdown next to the filename field to All Files (*.*) and locate the myCA.pem file, click Open, then Next
+9. Select Place all certificates in the following store. “Trusted Root Certification Authorities store” is the default. Click Next then click Finish to complete the wizard.
+
+Verify that the CA certificate is listed under Trusted Root Certification Authorities > Certificates.
+
+4. Generate a private key for the dev site certificate:
+
+$sudo openssl genrsa -out vctrl.key 2048
+
+RESULTS IN: vctrl.key
+
+5. Generate a certificate signing request for the dev site certificate:
+
+$sudo openssl req -new -key vctrl.key -out vctrl.csr
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:California
+Locality Name (eg, city) []:San Diego
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Same Day Rules
+Organizational Unit Name (eg, section) []:Development
+Common Name (e.g. server FQDN or YOUR name) []:Same Day Rules Cert
+Email Address []:support@samedayrules.com
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:yourpassword
+An optional company name []:Same Day Rules
+
+RESULTS IN: vctrl.csr
+
+6. Create an X509 V3 certificate extension config file to set the Subject Alternative Names (SAN) for the dev site certificate:
+
+We’ll be running openssl x509 because the x509 command allows us to edit certificate trust settings.
+
+$ sudo nano vctrl.ext
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = localhost
+DNS.2 = samedayrules.com
+DNS.3 = *.samedayrules.com
+IP.1 = 127.0.0.1
+IP.2 = 192.168.1.45
+
+RESULTS IN: vctrl.ext
+
+7. Generate the dev site certificate using the CSR, the CA private key, the CA certificate, and the config file:
+
+$sudo openssl x509 -req -in vctrl.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial -out vctrl.crt -days 825 -sha256 -extfile vctrl.ext
+
+We now have three files:
+vctrl.key (the private key)
+vctrl.csr (the certificate signing request, or csr file)
+vctrl.crt (the signed certificate).
+
+We can configure local web servers to use HTTPS with the private key and the signed certificate.
+
+8. Configure dev site web server to use private key and signed certificate
+
+Edit the Nginx configuration file for your dev web site to use the new private key and certificate.
+
+$sudo nano /etc/nginx/sites-enabled/vctrl
+ssl_certificate /home/webapp/vctrl/deployment/certs/vctrl.crt;
+ssl_certificate_key /home/webapp/vctrl/deployment/certs/vctrl.key;
+  
+  
 &copy; 2020-2023 Same Day Rules
