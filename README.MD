@@ -224,7 +224,7 @@ File summary:
 
 `$sudo openssl genrsa -des3 -out myCA.key 2048`
 
-Passphrase: yourpassphrase
+`Enter pass phrase for junk.key:yourpassphrase`
 
 RESULTS IN: myCA.key
 
