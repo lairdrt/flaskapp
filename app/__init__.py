@@ -2,6 +2,7 @@
 from flask import Flask, render_template
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect
+from werkzeug.middleware.proxy_fix import ProxyFix
 from app.database.session import Session
 from app.database import manage as dbmgnt
 from app.instance.config import Config
@@ -26,6 +27,12 @@ csrf = CSRFProtect()
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
+
+    # IF RUNNING BEHIND NGINX:
+    # https://flask.palletsprojects.com/en/2.2.x/deploying/proxy_fix/
+    app.wsgi_app = ProxyFix(
+        app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1, x_prefix=1
+    )
 
     # This extension adds support for break and continue in loops
     app.jinja_env.add_extension('jinja2.ext.loopcontrols')
