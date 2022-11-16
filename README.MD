@@ -30,7 +30,7 @@ And you'll usually need some form of development station, assuming a laptop comp
 - Set the locale
 - Set the wireless LAN SSID and passphrase
 - Set the SSH public key
-8. Select ***WRITE***
+8. Select `WRITE`
 9. After the write operation is complete, exit the imager program
 10. Eject the USB card reader and remove the MicroSD card from the reader
 11. **Make sure power is OFF** on the Raspberry Pi
