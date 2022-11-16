@@ -42,6 +42,9 @@ uploads/*
 backup/*
 *.key
 *.crt
+*.pem
+*.csr
+*.srl
 .env
 .csv
 
