@@ -312,7 +312,7 @@ RESULTS IN: vctrl.crt
 
 We can configure local web servers to use HTTPS with the private key and the signed certificate.
 
-### 8. Configure dev site web server to use private key and signed certificate
+### 8. Configure dev site web server to use private key and signed certificate:
 
 Edit the Nginx configuration file for your dev web site to use the new private key and certificate.
 
