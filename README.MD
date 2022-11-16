@@ -126,7 +126,7 @@ Follow the instructions at the link below to add your **public key** to GitHub s
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 1. Log into your [GitHub](https://github.com) account
 2. Select dropdown for your account
-3. Select ***Settings
+3. Select ***Settings***
 4. Select ***SSH and GPG keys***
 5. Select ***New SSH key***
 6. Fill in the fields regarding the key (use id_rsa.pub key from previous step)
