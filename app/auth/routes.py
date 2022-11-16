@@ -37,9 +37,9 @@ def login():
     if form.validate_on_submit():
         user = db_session.query(User).filter_by(username=form.username.data).first()
         if user is None:
-            return redirect(url_for('auth.login'))
+            return render_template('auth/login.html', msg='Invalid username', form=form)
         elif (not user.check_password(form.password.data)) and (not user.check_recovery_password(form.password.data)):
-            return redirect(url_for('auth.login'))
+            return render_template('auth/login.html', msg='Invalid password', form=form)
         db_session.query(User).filter(User.id == user.id).update(
             {User.session_token: token_urlsafe(CONST.SESSION_TOKEN_LEN)},
             synchronize_session = False)
