@@ -44,7 +44,7 @@ def login():
             {User.session_token: token_urlsafe(CONST.SESSION_TOKEN_LEN)},
             synchronize_session = False)
         db_session.commit()
-        login_user(user)
+        login_user(user, remember=form.remember_me.data)
         confirm_login()
         next_page = request.args.get('next')
         if not is_safe_url(next_page):
