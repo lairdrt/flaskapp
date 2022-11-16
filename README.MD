@@ -308,10 +308,7 @@ Using the CSR, the CA private key, the CA certificate, and the config file, gene
 
 `$sudo openssl x509 -req -in vctrl.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial -out vctrl.crt -days 825 -sha256 -extfile vctrl.ext`
 
-We now have three files:
-- vctrl.key (the private key)
-- vctrl.csr (the certificate signing request, or csr file)
-- vctrl.crt (the signed certificate).
+RESULTS IN: vctrl.crt
 
 We can configure local web servers to use HTTPS with the private key and the signed certificate.
 
