@@ -154,7 +154,7 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 
 `$git init`
 
-`$git clone https://github.com/lairdrt/flaskapp.git`
+`$git clone git@github.com:lairdrt/flaskapp.git`
 
 ## Install Rust Compiler for Python Cryptography Package
 The Python Cryptography package is required for the pyOpenSSL package which is required for OAuth authorization.
