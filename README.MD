@@ -2,7 +2,9 @@
 The Flask Application Template contains the framework for quickly building a [full stack](https://www.w3schools.com/whatis/whatis_fullstack.asp) application using your choice of database (PostgreSQL, MySQL, SQLite3) along with secure login and Bootstrap (5) HTML components.
 
 The instructions below describe how to commission a (Raspberry Pi) microcomputer system running (Raspberry Pi OS) Linux with the
-[Flask](https://flask.palletsprojects.com/en/2.2.x/) micro-framework that supports a full stack embedded application. **They assume that you are starting from scratch.**
+[Flask](https://flask.palletsprojects.com/en/2.2.x/) micro-framework that supports a full stack embedded application.
+
+**It is assumed that you are starting from scratch and that removable media (i.e., SD cards) will be completely erased.**
 
 ## Hardware
 1. [Raspberry Pi (Zero 2 W)](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
@@ -27,20 +29,20 @@ to the clipboard so that you can paste it into a field during OS configuration b
 2. Insert the USB card reader into the laptop
 3. Download and install [Raspberry Pi OS imager software](https://www.raspberrypi.com/software/) on the laptop
 4. Launch the imager program
-5. Select CHOOSE OS then Raspberry Pi OS (other) then Raspberry Pi OS Lite (32-bit)
-7. Select USB MASS STORAGE then select the USB mass storage device for your card reader
-8. Type CTRL + Shift + X to preconfigure the OS as follows:
-- Select Set hostname then enter a short name for the Raspberry Pi
-- Select Enable SSH then Allow public-key authentication only
-- Select Set authorized_keys for 'pi' and paste your known SSH public key here
-- Select Configure wireless LAN then enter the name of the network in the SSID field
-- Enter the password for the wireless LAN and then select the Wireless LAN country
+5. Select **CHOOSE OS** then **Raspberry Pi OS (other)** then **Raspberry Pi OS Lite (32-bit)**
+7. Select **USB MASS STORAGE** then select the USB mass storage device for your card reader
+8. Type **CTRL + Shift + X** to preconfigure the OS as follows:
+- Select **Set hostname** then enter a short name for the Raspberry Pi
+- Select **Enable SSH** then **Allow public-key authentication only**
+- Select **Set authorized_keys for 'pi'** and paste your known SSH public key here
+- Select **Configure wireless LAN** then enter the name of the network in the SSID field
+- Enter the password for the wireless LAN and then select the **Wireless LAN country**
 - Set locale settings as necessary
-- Finally, select SAVE
-9. Select WRITE
+- Finally, select **SAVE**
+9. Select **WRITE**
 10. After the write operation is complete, exit the imager program
 11. Eject the USB card reader and remove the MicroSD card from the reader
-12. **Make sure power is OFF** on the Raspberry Pi
+12. Make sure power is **OFF** on the Raspberry Pi
 13. Insert the MicroSD card into the Raspberry Pi memory card slot
 
 ## Connect Monitor/Keyboard to Raspberry Pi
