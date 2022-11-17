@@ -14,7 +14,7 @@ The instructions below describe how to commission a (Raspberry Pi) microcomputer
 
 If you have issues setting up either the wireless LAN connection or SSH, you may also need:
 
-5. [Computer monitor](https://www.bestbuy.com/site/lg-22-led-fhd-freesync-monitor-hdmi-black/6509812.p?skuId=6509812)
+5. [Computer monitor](https://www.lg.com/us/monitors/lg-22mp400-b-ips-monitor)
 6. [Wireless USB keyboard/mouse/dongle](https://www.amazon.com/Logitech-MK270-Wireless-Keyboard-Mouse/dp/B079JLY5M5/ref=sr_1_4)
 7. [USB Micro to USB adapter](https://www.adafruit.com/product/2910)
 8. [Micro-HDMI to HDMI adapter](https://www.adafruit.com/product/1358)
