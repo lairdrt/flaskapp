@@ -338,7 +338,7 @@ Edit the Nginx configuration file for your dev web site to use the new private k
 
 `ssl_certificate_key /home/webapp/flaskapp/deployment/certs/flaskapp.key;`
 
-Nginx commands:
+## Nginx commands
 ```
 sudo systemctl status nginx
 sudo systemctl stop nginx
