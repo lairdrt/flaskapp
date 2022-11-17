@@ -1,5 +1,5 @@
 # App title
-TITLE = 'Waterworks Valve Controller'
+TITLE = 'Flask App'
 
 # Program version (major.minor)
 VERSION = '0.10'
@@ -11,9 +11,9 @@ RELEASED = '11 November 2022'
 SESSION_TOKEN_LEN = 20
 
 # File paths
-BASE_DIR = '/home/webapp/vctrl/'
+BASE_DIR = '/home/webapp/myapp/'
 LOG_FILE_DIR = BASE_DIR + 'logs/'
-LOG_FILE_NAME = LOG_FILE_DIR + 'vctrl.log'
+LOG_FILE_NAME = LOG_FILE_DIR + 'myapp.log'
 
 # Flash message styles from bootstrap
 FLASH_ERROR = 'alert-danger'
@@ -22,9 +22,6 @@ FLASH_SUCCESS = 'alert-success'
 FLASH_WARNING = 'alert-warning'
 
 NONE_DISP = '...' # when object/field is None
-
-# Default username
-SYSADMIN_USERNAME = 'vctrladmin'
 
 # Site/zone operational literals (map to select lists)
 STATE_ONLINE = 1
@@ -332,27 +329,13 @@ def cvt_windspeed_to_us(level, units):
         return 0.0
 
 # Logged error message number bases
-MSG_ALEXA_BASE =     1000
-MSG_AUTH_BASE =      2000
-MSG_DATABASE_BASE =  3000
-MSG_DEVICES_BASE =   4000
-MSG_DEVMGR_BASE =    5000
-MSG_ERRORS_BASE =    6000
-MSG_GLOBALS_BASE =   7000 
-MSG_HELP_BASE =      8000
-MSG_INIT_BASE =      9000
-MSG_INSTANCE_BASE =  10000
-MSG_LOG_BASE =       11000
-MSG_MAIN_BASE =      12000
-MSG_PROGRAMS_BASE =  13000
-MSG_SCHEDULE_BASE =  14000
-MSG_SETTINGS_BASE =  15000
-MSG_SITE_BASE =      16000
-MSG_STATIC_BASE =    17000
-MSG_TASKS_BASE =     18000
-MSG_TEMPLATES_BASE = 19000
-MSG_TOOLS_BASE =     20000
-MSG_USAGE_BASE =     21000
-MSG_UTIL_BASE =      22000
-MSG_VALVES_BASE =    23000
-MSG_ZONES_BASE =     24000
+MSG_AUTH_BASE =      1000
+MSG_DATABASE_BASE =  2000
+MSG_ERRORS_BASE =    3000
+MSG_GLOBALS_BASE =   4000 
+MSG_INIT_BASE =      5000
+MSG_INSTANCE_BASE =  6000
+MSG_LOG_BASE =       7000
+MSG_HOME_BASE =      8000
+MSG_STATIC_BASE =    9000
+MSG_TEMPLATES_BASE = 10000

@@ -1,4 +1,4 @@
-# /etc/nginx/sites-enabled/vctrl
+# /etc/nginx/sites-enabled/flaskapp
 # https://www.nginx.com/resources/wiki/start/topics/examples/full/
 server {
     # listen on port 80 (http) and 49080 (for HTTP port forwarding)
@@ -7,8 +7,8 @@ server {
     server_name _;
 
     # write access and error logs to /var/log
-    access_log /var/log/vctrl-access.log;
-    error_log /var/log/vctrl-error.log;
+    access_log /var/log/flaskapp-access.log;
+    error_log /var/log/flaskapp-error.log;
 
     location / {
         # forward application requests to the gunicorn server
@@ -26,7 +26,7 @@ server {
 
     location /static {
         # handle static files directly, without forwarding to the application
-        alias /home/webapp/vctrl/app/static;
+        alias /home/webapp/flaskapp/app/static;
         expires 30d;
     }
 }
@@ -37,12 +37,12 @@ server {
     server_name _;
 
     # location of the self-signed SSL certificate
-    ssl_certificate /home/webapp/vctrl/deployment/certs/vctrl.crt;
-    ssl_certificate_key /home/webapp/vctrl/deployment/certs/vctrl.key;
+    ssl_certificate /home/webapp/flaskapp/deployment/certs/flaskapp.crt;
+    ssl_certificate_key /home/webapp/flaskapp/deployment/certs/flaskapp.key;
 
     # write access and error logs to /var/log
-    access_log /var/log/vctrl-access-ssl.log;
-    error_log /var/log/ww-vctrl-error-ssl.log;
+    access_log /var/log/flaskapp-access-ssl.log;
+    error_log /var/log/ww-flaskapp-error-ssl.log;
 
     location / {
         # https://flask.palletsprojects.com/en/2.2.x/deploying/nginx/
@@ -59,7 +59,7 @@ server {
 
     location /static {
         # handle static files directly, without forwarding to the application
-        alias /home/webapp/vctrl/app/static;
+        alias /home/webapp/flaskapp/app/static;
         expires 30d;
     }
 }

@@ -148,13 +148,13 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 `$sudo pip install --upgrade pip`
 
 ## Setup git Repository
-`$mkdir vctrl`
+`$mkdir flaskapp`
 
-`$cd ~/vctrl`
+`$cd ~/flaskapp`
 
 `$git init`
 
-`$git clone https://github.com/lairdrt/vctrl.git`
+`$git clone https://github.com/lairdrt/flaskapp.git`
 
 ## Install Rust Compiler for Python Cryptography Package
 The Python Cryptography package is required for the pyOpenSSL package which is required for OAuth authorization.
@@ -174,7 +174,7 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 `$sudo rustup self uninstall`
 
 ## Create Virtual Environment and Install Python Packages
-`$cd ~/vctrl`
+`$cd ~/flaskapp`
 
 `$python3 -m venv venv`
 
@@ -203,9 +203,9 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 `>FLUSH PRIVILEGES;`
 
 ## Configure Nginx and Supervisor
-`$sudo cp ~/vctrl/deployment/nginx/vctrl /etc/nginx/sites-enabled/vctrl`
+`$sudo cp ~/flaskapp/deployment/nginx/flaskapp /etc/nginx/sites-enabled/flaskapp`
 
-`$sudo cp ~/vctrl/deployment/supervisor/vctrl.conf /etc/supervisor/conf.d/vctrl.conf`
+`$sudo cp ~/flaskapp/deployment/supervisor/flaskapp.conf /etc/supervisor/conf.d/flaskapp.conf`
 
 ## Create Your Own SSL Certificate Authority for Serving HTTPS from Your Private Network
 
@@ -215,18 +215,18 @@ Steps involved and what they produce:
 1. Generate a private key for the root certificate -> myCA.key
 2. Generate the root certificate using the private key -> myCA.pem
 3. Install the root certificate on Windows 10 -> myCA.pem added to Trusted Root Certification Authorities
-4. Generate a private key for the dev site certificate -> vctrl.key
-5. Generate a certificate signing request for the dev site certificate -> vctrl.csr
+4. Generate a private key for the dev site certificate -> flaskapp.key
+5. Generate a certificate signing request for the dev site certificate -> flaskapp.csr
 6. Create an X509 V3 certificate extension config file to set the Subject Alternative Names (SAN) for the dev site certificate
-7. Generate the dev site certificate using the CSR, the CA private key, the CA certificate, and the config file -> vctrl.crt
+7. Generate the dev site certificate using the CSR, the CA private key, the CA certificate, and the config file -> flaskapp.crt
 8. Configure dev site web server to use private key and signed certificate
 
 File summary:
 - myCA.key : CA root certificate private key (requires passphrase)
 - myCA.pem : Signed CA root certificate (installed on machines wanting access to your dev site over HTTPS)
-- vctrl.key : Dev site certificate private key
-- vctrl.csr : Dev site certificate signing request
-- vctrl.crt : Signed dev site certificate (installed on dev site HTTPS web server)
+- flaskapp.key : Dev site certificate private key
+- flaskapp.csr : Dev site certificate signing request
+- flaskapp.crt : Signed dev site certificate (installed on dev site HTTPS web server)
 
 ### 1. Generate a private key for the root certificate:
 
@@ -268,13 +268,13 @@ Verify that the CA certificate is listed under Trusted Root Certification Author
 
 ### 4. Generate a private key for the dev site certificate:
 
-`$sudo openssl genrsa -out vctrl.key 2048`
+`$sudo openssl genrsa -out flaskapp.key 2048`
 
-RESULTS IN: vctrl.key
+RESULTS IN: flaskapp.key
 
 ### 5. Generate a certificate signing request for the dev site certificate:
 
-`$sudo openssl req -new -key vctrl.key -out vctrl.csr`
+`$sudo openssl req -new -key flaskapp.key -out flaskapp.csr`
 ```
 Country Name (2 letter code) [AU]:US
 State or Province Name (full name) [Some-State]:California
@@ -289,12 +289,12 @@ to be sent with your certificate request
 A challenge password []:yourpassword
 An optional company name []:Same Day Rules
 ```
-RESULTS IN: vctrl.csr
+RESULTS IN: flaskapp.csr
 
 ### 6. Create an X509 V3 certificate extension config file:
 We’ll be running `openssl x509` because the x509 command allows us to edit certificate trust settings, and allows us to set the Subject Alternative Names (SAN) for the dev site certificate.
 
-`$ sudo nano vctrl.ext`
+`$ sudo nano flaskapp.ext`
 ```
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
@@ -308,14 +308,14 @@ DNS.3 = *.samedayrules.com
 IP.1 = 127.0.0.1
 IP.2 = 192.168.1.45
 ```
-RESULTS IN: vctrl.ext
+RESULTS IN: flaskapp.ext
 
 ### 7. Generate the dev site certificate:
 Using the CSR, the CA private key, the CA certificate, and the config file, generate the signed dev site certificate.
 
-`$sudo openssl x509 -req -in vctrl.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial -out vctrl.crt -days 825 -sha256 -extfile vctrl.ext`
+`$sudo openssl x509 -req -in flaskapp.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial -out flaskapp.crt -days 825 -sha256 -extfile flaskapp.ext`
 
-RESULTS IN: vctrl.crt
+RESULTS IN: flaskapp.crt
 
 We can configure local web servers to use HTTPS with the private key and the signed certificate.
 
@@ -323,11 +323,11 @@ We can configure local web servers to use HTTPS with the private key and the sig
 
 Edit the Nginx configuration file for your dev web site to use the new private key and certificate.
 
-`$sudo nano /etc/nginx/sites-enabled/vctrl`
+`$sudo nano /etc/nginx/sites-enabled/flaskapp`
 
-`ssl_certificate /home/webapp/vctrl/deployment/certs/vctrl.crt;`
+`ssl_certificate /home/webapp/flaskapp/deployment/certs/flaskapp.crt;`
 
-`ssl_certificate_key /home/webapp/vctrl/deployment/certs/vctrl.key;`
+`ssl_certificate_key /home/webapp/flaskapp/deployment/certs/flaskapp.key;`
 
 Nginx commands:
 ```
