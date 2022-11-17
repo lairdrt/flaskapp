@@ -37,9 +37,9 @@ nosetests.xml
 # Flask app
 venv
 app.db
-logs/*
 uploads/*
 backup/*
+*.log
 *.key
 *.crt
 *.pem
