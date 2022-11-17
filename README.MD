@@ -1,5 +1,5 @@
 # Flask Application Template
-The Flask Application Template contains the framework for quickly building a [full stack](https://www.w3schools.com/whatis/whatis_fullstack.asp) application using your choice of database (PostgreSQL, MySQL, SQLite3) along with secure login and Bootstrap (5) HTML components.
+The Flask Application Template contains the framework for quickly building a [full stack](https://www.w3schools.com/whatis/whatis_fullstack.asp) application using your choice of database ([PostgreSQL](https://www.postgresql.org/), [MySQL](https://www.mysql.com/), [SQLite3](https://www.sqlite.org/index.html)) along with secure login and [Bootstrap](https://getbootstrap.com/) (5) HTML components.
 
 The instructions below describe how to commission a (Raspberry Pi) microcomputer system running (Raspberry Pi OS) Linux with the
 [Flask](https://flask.palletsprojects.com/en/2.2.x/) micro-framework that supports a full stack embedded application.
