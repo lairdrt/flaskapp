@@ -230,10 +230,9 @@ File summary:
 - flaskapp.csr : Dev site certificate signing request
 - flaskapp.crt : Signed dev site certificate (installed on dev site HTTPS web server)
 
-### 0. Set working directory:
-'$cd ~/flaskapp/deployment/certs`
-
 ### 1. Generate a private key for the root certificate:
+`$cd ~/flaskapp/deployment/certs`
+
 `$sudo openssl genrsa -des3 -out myCA.key 2048`
 
 `Enter pass phrase for myCA.key:yourpassphrase`
