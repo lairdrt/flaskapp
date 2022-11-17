@@ -261,19 +261,19 @@ RESULTS IN: sdrCA.pem
 
 ### 3. Install the root certificate on Windows 10:
 
-Open the Microsoft Management Console by using the Windows + R keyboard combination, typing ***mmc*** and clicking Open
-1. Go to File -> Add/Remove Snap-in
-2. Select Certificates and Add
-3. Select Computer Account and click Next
-4. Select Local Computer then click Finish
-5. Select OK to go back to the MMC window
-6. Double-click Certificates (local computer) to expand the view
-7. Select Trusted Root Certification Authorities, right-click on Certificates in the middle column under Object Type and select All Tasks then Import
-8. Select Next then Browse. Change the certificate extension dropdown next to the filename field to All Files (*.*) and locate the sdrCA.pem file, click Open, then Next
-9. Select Place all certificates in the following store > Trusted Root Certification Authorities (the default store)
-10. Select Next then click Finish to complete the wizard
+Open the Microsoft Management Console by using the Windows + R keyboard combination, typing **mmc** and clicking Open
+1. Go to **File -> Add/Remove Snap-in**
+2. Select **Certificates** and **Add**
+3. Select **Computer Account** and click **Next**
+4. Select **Local Computer** then click **Finish**
+5. Select **OK** to go back to the MMC window
+6. Double-click **Certificates (local computer)** to expand the view
+7. Select **Trusted Root Certification Authorities**, right-click on **Certificates** in the middle column under **Object Type** and select **All Tasks** then **Import**
+8. Select **Next** then **Browse**. Change the certificate extension dropdown next to the filename field to **All Files (*.*)** and locate the sdrCA.pem file, click **Open**, then **Next**
+9. Select **Place all certificates in the following store > Trusted Root Certification Authorities** (the default store)
+10. Select **Next** then click **Finish** to complete the wizard
 
-Verify that the CA certificate is listed under Trusted Root Certification Authorities > Certificates.
+Verify that the CA certificate is listed under **Trusted Root Certification Authorities > Certificates**.
 
 ### 4. Generate a private key for the dev site certificate:
 
