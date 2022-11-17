@@ -216,7 +216,6 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 `$sudo cp ~/flaskapp/deployment/supervisor/flaskapp.conf /etc/supervisor/conf.d/flaskapp.conf`
 
 ## Create Your Own SSL Certificate Authority for Serving HTTPS from Your Private Network
-
 https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
 
 Steps involved and what they produce:
@@ -230,8 +229,8 @@ Steps involved and what they produce:
 8. Configure dev site web server to use private key and signed certificate
 
 File summary:
-- myCA.key : CA root certificate private key (requires passphrase)
-- myCA.pem : Signed CA root certificate (installed on machines wanting access to your dev site over HTTPS)
+- sdrCA.key : CA root certificate private key (requires passphrase)
+- sdrCA.pem : Signed CA root certificate (installed on machines wanting access to your dev site over HTTPS)
 - flaskapp.key : Dev site certificate private key
 - flaskapp.csr : Dev site certificate signing request
 - flaskapp.crt : Signed dev site certificate (installed on dev site HTTPS web server)
@@ -239,15 +238,15 @@ File summary:
 ### 1. Generate a private key for the root certificate:
 `$cd ~/flaskapp/deployment/certs`
 
-`$sudo openssl genrsa -des3 -out myCA.key 2048`
+`$sudo openssl genrsa -des3 -out sdrCA.key 2048`
 
-`Enter pass phrase for myCA.key:yourpassphrase`
+`Enter pass phrase for sdrCA.key:yourpassphrase`
 
-RESULTS IN: myCA.key
+RESULTS IN: sdrCA.key
 
 ### 2. Generate the root certificate using the private key:
 
-`$sudo openssl req -x509 -new -nodes -key myCA.key -sha256 -days 1825 -out myCA.pem`
+`$sudo openssl req -x509 -new -nodes -key sdrCA.key -sha256 -days 1825 -out sdrCA.pem`
 ```
 Country Name (2 letter code) [AU]:US
 State or Province Name (full name) [Some-State]:California
@@ -257,7 +256,7 @@ Organizational Unit Name (eg, section) []:Development
 Common Name (e.g. server FQDN or YOUR name) []:Same Day Rules Root
 Email Address []:support@samedayrules.com
 ```
-RESULTS IN: myCA.pem
+RESULTS IN: sdrCA.pem
 
 ### 3. Install the root certificate on Windows 10:
 
@@ -269,7 +268,7 @@ Open the Microsoft Management Console by using the Windows + R keyboard combinat
 5. Select OK to go back to the MMC window
 6. Double-click Certificates (local computer) to expand the view
 7. Select Trusted Root Certification Authorities, right-click on Certificates in the middle column under Object Type and select All Tasks then Import
-8. Select Next then Browse. Change the certificate extension dropdown next to the filename field to All Files (*.*) and locate the myCA.pem file, click Open, then Next
+8. Select Next then Browse. Change the certificate extension dropdown next to the filename field to All Files (*.*) and locate the sdrCA.pem file, click Open, then Next
 9. Select Place all certificates in the following store > Trusted Root Certification Authorities (the default store)
 10. Select Next then click Finish to complete the wizard
 
@@ -322,7 +321,7 @@ RESULTS IN: flaskapp.ext
 ### 7. Generate the dev site certificate:
 Using the CSR, the CA private key, the CA certificate, and the config file, generate the signed dev site certificate.
 
-`$sudo openssl x509 -req -in flaskapp.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial -out flaskapp.crt -days 825 -sha256 -extfile flaskapp.ext`
+`$sudo openssl x509 -req -in flaskapp.csr -CA sdrCA.pem -CAkey sdrCA.key -CAcreateserial -out flaskapp.crt -days 825 -sha256 -extfile flaskapp.ext`
 
 RESULTS IN: flaskapp.crt
 
