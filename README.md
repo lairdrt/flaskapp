@@ -149,6 +149,12 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 `$sudo pip install --upgrade pip`
 
 ## Setup git Repository
+First on GitHub:
+
+[Create a new repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
+
+Then on the local development machine:
+
 `$cd ~`
 
 `$git clone git@github.com:lairdrt/flaskapp.git`
@@ -157,7 +163,11 @@ Verify that your email address and username are correct in the .gitconfig file.
 
 `$git config --global user.name "FIRST_NAME LAST_NAME"`
 
-`$git config --global user.email "MY_NAME@example.com"` 
+`$git config --global user.email "MY_NAME@example.com"`
+
+`$git remote add origin <REMOTE_URL>`
+
+`$git remote -v`
 
 ## Install Rust Compiler for Python Cryptography Package
 The Python Cryptography package is required for the pyOpenSSL package which is required for OAuth authorization.
