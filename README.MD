@@ -160,7 +160,7 @@ Verify that your email address and username are correct in the .gitconfig file.
 
 `$git config --global user.name "FIRST_NAME LAST_NAME`
 
-'$git config --global user.email "MY_NAME@example.com"` 
+`$git config --global user.email "MY_NAME@example.com"` 
 
 ## Install Rust Compiler for Python Cryptography Package
 The Python Cryptography package is required for the pyOpenSSL package which is required for OAuth authorization.
