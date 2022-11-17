@@ -182,7 +182,7 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 
 `$source venv/bin/activate`
 
-`$pip install -r requirements.txt`
+`(venv)$pip install -r requirements.txt`
 
 ## Install MySQL DB (Maria DB)
 `$sudo apt install mariadb-server`
@@ -208,7 +208,7 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 
 `$source ~/flaskapp/venv/bin/activate`
 
-`$flask database create`
+`(venv)$flask database create`
 
 ## Configure Nginx and Supervisor
 `$sudo cp ~/flaskapp/deployment/nginx/flaskapp /etc/nginx/sites-enabled/flaskapp`
