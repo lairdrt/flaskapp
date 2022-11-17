@@ -169,7 +169,7 @@ Verify that your email address and username are correct in the .gitconfig file.
 
 `$git remote -v`
 
-`$git push origin master`
+`$git push -u origin master`
 
 ## Install Rust Compiler for Python Cryptography Package
 The Python Cryptography package is required for the pyOpenSSL package which is required for OAuth authorization.
