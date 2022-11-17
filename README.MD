@@ -62,10 +62,10 @@ You should be able to log into the Raspberry Pi using the default credentials: U
 
 ## Configure Wireless LAN
 `$sudo raspi-config`
-1. Select Localisation Options
-2. Select WLAN Country
-3. Select US United States (or your country)
-4. Select Finish
+1. Select **Localisation Options**
+2. Select **WLAN Country**
+3. Select **US United States** (or your country)
+4. Select **Finish**
 
 Replace the contents of the wpa_supplicant.conf file with the following.
 
@@ -74,7 +74,6 @@ Replace the contents of the wpa_supplicant.conf file with the following.
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=US
-
 network={
         ssid="yourwlanid"
         scan_ssid=1
@@ -89,11 +88,11 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 
 ### Enable SSH on Raspberry Pi
 `$sudo raspi-config`
-1. Select Interface Options
-2. Select SSH
-3. Select Yes
-4. Select Ok
-5. Select Finish
+1. Select **Interface Options**
+2. Select **SSH**
+3. Select **Yes**
+4. Select **Ok**
+5. Select **Finish**
 
 ### Generate SSH Public/Private Key
 `$cd ~`
@@ -111,7 +110,7 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 `$mv id_rsa.pub authorized_keys`
 
 `$ssh -T git@github.com`
-1. Answer Yes to question about wanting to connect
+1. Answer **Yes** to question about wanting to connect
 2. This should add GitHub to ~/.ssh/known_hosts file
 
 ### Add SSH Key to PuTTY Configuration
@@ -121,13 +120,13 @@ Follow the instructions at the link below to add your **private key** generated 
 
 https://docs.oracle.com/en/cloud/paas/goldengate-cloud/tutorial-change-private-key-format/
 1. Launch the PuTYTGen program
-2. Under Parameters, select RSA and use 2048 for bits in generated key
+2. Under **Parameters**, select **RSA** and use **2048** for bits in generated key
 3. Load your existing private key that you generated above (and saved locally)
 4. After you've loaded your existing private key, save the new key as a .ppk file that can be loaded by PuTTY
 5. Exit PuttyGen
 6. Launch PuTTY
 7. Configure settings for a new session
-8. Under Connection -> SSH -> Auth, find and open the .ppk file you just saved
+8. Under **Connection -> SSH -> Auth**, find and open the .ppk file you just saved
 9. You should now be able to connect to your Raspberry Pi using SSH
 
 ### Add SSH Key to GitHib Account
@@ -135,12 +134,12 @@ Follow the instructions at the link below to add your **public key** to GitHub s
 
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 1. Log into your [GitHub](https://github.com) account
-2. Select dropdown for your account
-3. Select Settings
-4. Select SSH and GPG keys
-5. Select New SSH key
+2. Select the dropdown for your account
+3. Select **Settings**
+4. Select **SSH and GPG** keys
+5. Select **New SSH key**
 6. Fill in the fields regarding the key (use id_rsa.pub key from previous step)
-7. Select Add SSH key
+7. Select **Add SSH key**
 
 ## Install Python and Other Tools
 `$sudo apt-get -y install python3 python3-venv python3-dev`
@@ -166,7 +165,7 @@ OAuth is used to log into the Flask application via third-party providers such a
 using the Rust compiler.
 
 `$sudo curl https://sh.rustup.rs -sSf | sh`
-1. Select option 1 (the default)
+1. Select option **1** (the default)
 
 `$source $HOME/.cargo/env`
 
@@ -190,8 +189,8 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 `$sudo apt install mariadb-server`
 
 `$sudo mysql_secure_installation`
-1. Answer N to prompts regarding setting/changing root password
-2. Answer Y to all other prompts
+1. Answer **N** to prompts regarding setting/changing root password
+2. Answer **Y** to all other prompts
 
 ## Make Database
 `$sudo mysql -u root -p`
