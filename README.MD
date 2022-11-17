@@ -248,7 +248,7 @@ State or Province Name (full name) [Some-State]:California
 Locality Name (eg, city) []:San Diego
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Same Day Rules
 Organizational Unit Name (eg, section) []:Development
-Common Name (e.g. server FQDN or YOUR name) []:Same Day Rules Root
+Common Name (e.g. server FQDN or YOUR name) []:https://samedayrules.com
 Email Address []:support@samedayrules.com
 ```
 RESULTS IN: myCA.pem
