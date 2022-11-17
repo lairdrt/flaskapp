@@ -39,7 +39,8 @@ venv
 app.db
 uploads/*
 backup/*
-*.log
+logs/*
+*.log.*
 *.key
 *.crt
 *.pem
