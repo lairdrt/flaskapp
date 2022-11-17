@@ -148,11 +148,7 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 `$sudo pip install --upgrade pip`
 
 ## Setup git Repository
-`$mkdir flaskapp`
-
-`$cd ~/flaskapp`
-
-`$git init`
+`$cd ~
 
 `$git clone git@github.com:lairdrt/flaskapp.git`
 
