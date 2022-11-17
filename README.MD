@@ -29,7 +29,7 @@ to the clipboard so that you can paste it into a field during OS configuration b
 4. Launch the imager program
 5. Select CHOOSE OS then Raspberry Pi OS (other) then Raspberry Pi OS Lite (32-bit)
 7. Select USB MASS STORAGE then select the USB mass storage device for your card reader
-8. Type CTRL + Shift + X to preconfigure the OS
+8. Type CTRL + Shift + X to preconfigure the OS as follows:
 - Select Set hostname then enter a short name for the Raspberry Pi
 - Select Enable SSH then Allow public-key authentication only
 - Select Set authorized_keys for 'pi' and paste your known SSH public key here
