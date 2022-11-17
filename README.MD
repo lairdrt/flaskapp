@@ -269,7 +269,7 @@ Open the Microsoft Management Console by using the Windows + R keyboard combinat
 5. Select **OK** to go back to the MMC window
 6. Double-click **Certificates (local computer)** to expand the view
 7. Select **Trusted Root Certification Authorities**, right-click on **Certificates** in the middle column under **Object Type** and select **All Tasks** then **Import**
-8. Select **Next** then **Browse**. Change the certificate extension dropdown next to the filename field to **All Files (*.*)** and locate the sdrCA.pem file, click **Open**, then **Next**
+8. Select **Next** then **Browse**. Change the certificate extension dropdown next to the filename field to **All Files (\*.\*)** and locate the sdrCA.pem file, click **Open**, then **Next**
 9. Select **Place all certificates in the following store > Trusted Root Certification Authorities** (the default store)
 10. Select **Next** then click **Finish** to complete the wizard
 
