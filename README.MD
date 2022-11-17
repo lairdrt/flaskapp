@@ -204,6 +204,12 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 
 `>FLUSH PRIVILEGES;`
 
+`$cd ~/flaskapp`
+
+`$source ~/flaskapp/venv/bin/activate`
+
+`$flask database create`
+
 ## Configure Nginx and Supervisor
 `$sudo cp ~/flaskapp/deployment/nginx/flaskapp /etc/nginx/sites-enabled/flaskapp`
 
