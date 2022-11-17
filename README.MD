@@ -219,9 +219,9 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
 
 Steps involved and what they produce:
-1. Generate a private key for the root certificate -> myCA.key
-2. Generate the root certificate using the private key -> myCA.pem
-3. Install the root certificate on Windows 10 -> myCA.pem added to Trusted Root Certification Authorities
+1. Generate a private key for the root certificate -> sdrCA.key
+2. Generate the root certificate using the private key -> sdrCA.pem
+3. Install the root certificate on Windows 10 -> sdrCA.pem added to Trusted Root Certification Authorities
 4. Generate a private key for the dev site certificate -> flaskapp.key
 5. Generate a certificate signing request for the dev site certificate -> flaskapp.csr
 6. Create an X509 V3 certificate extension config file to set the Subject Alternative Names (SAN) for the dev site certificate
