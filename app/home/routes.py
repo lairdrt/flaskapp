@@ -7,7 +7,7 @@ from app.log.logger import logger, err
 import app.globals.constants as CONST
 import json
 
-ERB = CONST.MSG_MAIN_BASE # error message base
+ERB = CONST.MSG_HOME_BASE # error message base
 
 # APP route: use shared session
 @bp.route('/', methods=['GET'])

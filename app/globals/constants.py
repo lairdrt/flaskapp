@@ -11,9 +11,9 @@ RELEASED = '11 November 2022'
 SESSION_TOKEN_LEN = 20
 
 # File paths
-BASE_DIR = '/home/webapp/myapp/'
+BASE_DIR = '/home/webapp/flaskapp/'
 LOG_FILE_DIR = BASE_DIR + 'logs/'
-LOG_FILE_NAME = LOG_FILE_DIR + 'myapp.log'
+LOG_FILE_NAME = LOG_FILE_DIR + 'flaskapp.log'
 
 # Flash message styles from bootstrap
 FLASH_ERROR = 'alert-danger'
