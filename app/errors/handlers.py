@@ -5,22 +5,22 @@ from app.errors import bp
 
 @bp.app_errorhandler(400)
 def bad_request_error(error):
-    return render_template('errors/400.html'), 403
+    return render_template('errors/400.html', reason=error.description), 403
 
 @bp.app_errorhandler(403)
 def forbidden_error(error):
-    return render_template('errors/403.html'), 403
+    return render_template('errors/403.html', reason=error.description), 403
 
 @bp.app_errorhandler(404)
 def not_found_error(error):
-    return render_template('errors/404.html'), 404
+    return render_template('errors/404.html', reason=error.description), 404
 
 @bp.app_errorhandler(500)
 def internal_error(error):
     db_session.rollback()
-    return render_template('errors/500.html'), 500
+    return render_template('errors/500.html', reason=error.description), 500
 
 @bp.app_errorhandler(CSRFError)
-def csrf_error(e):
+def csrf_error(error):
     print(request.form)
-    return render_template('errors/csrf.html', reason=e.description), 400
+    return render_template('errors/csrf.html', reason=error.description), 400

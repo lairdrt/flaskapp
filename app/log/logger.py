@@ -25,7 +25,7 @@ ch.setLevel(logging.DEBUG)
 logger.addHandler(ch)
 
 # To a log file
-# INFO and higher to console
+# INFO and higher to log file
 if not os.path.exists(CONST.LOG_FILE_DIR):
     os.mkdir(CONST.LOG_FILE_DIR)
 fh = RotatingFileHandler(CONST.LOG_FILE_NAME, maxBytes=10240, backupCount=10)

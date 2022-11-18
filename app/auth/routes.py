@@ -28,7 +28,8 @@ def login_github():
     if resp.ok:
         return redirect(url_for('home.index'))
     else:
-        return abort(400)
+        logger.error(err(ERB+1) + "GitHub OAuth resposnse is not OK")
+        return abort(500)
 
 # APP route: use shared session
 @bp.route('/login', methods=['GET', 'POST'])
@@ -48,6 +49,7 @@ def login():
         confirm_login()
         next_page = request.args.get('next')
         if not is_safe_url(next_page):
+            logger.error(err(ERB+2) + "Next page is undefined or not safe")
             return abort(400)
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home.index')

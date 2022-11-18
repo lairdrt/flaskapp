@@ -13,6 +13,8 @@ from urllib.parse import urlparse, urljoin
 from werkzeug.urls import url_parse
 import app.globals.constants as CONST
 
+ERB = CONST.MSG_AUTH_BASE # error message base
+
 # Check for basic proper URL form
 def is_safe_url(target):
     ref_url = urlparse(request.host_url)
@@ -58,7 +60,11 @@ def github_logged_in(blueprint, token):
         confirm_login()
         next_page = request.args.get('next')
         if not is_safe_url(next_page):
+            logger.error(err(ERB+1) + "Next page is undefined or not safe")
             return abort(400)
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home.index')
         return redirect(next_page)
+    else:
+        logger.error(err(ERB+2) + "Authorized response from GitHub is not OK")
+        return abort(500)
