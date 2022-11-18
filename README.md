@@ -207,8 +207,13 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 `$ sudo apt install -y mariadb-server`
 
 `$ sudo mysql_secure_installation`
-1. Answer **N** to prompts regarding setting/changing root password
-2. Answer **Y** to all other prompts
+1. Enter current password for root (enter for none): **<enter>**
+2. Switch to unix_socket authentication: **Y**
+3. Change the root password? **N**
+4. Remove anonymous uesrs? **Y**
+5. Disallow root login remotely? **Y**
+6. Remove test database and access to it? **Y**
+7. Reload privelege tables now? **Y**
 
 ## Make Database
 `$ sudo mysql -u root -p`
