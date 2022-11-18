@@ -157,7 +157,9 @@ You'll need the URL for the new repository below; it has the form `git@github.co
 
 **Then on the local development machine:**
 
-`$cd ~`
+`$mkdir ~/flaskapp`
+
+`$cd ~/flaskapp`
 
 Verify that your email address and username are correct in the .gitconfig file.
 
@@ -165,7 +167,7 @@ Verify that your email address and username are correct in the .gitconfig file.
 
 `$git config --global user.email "MY_NAME@example.com"`
 
-`$git clone git@github.com:lairdrt/flaskapp.git`
+`$git clone git@github.com:lairdrt/flaskapp.git .`
 
 `$git remote remove origin`
 
