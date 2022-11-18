@@ -175,9 +175,9 @@ Verify that your email address and username are correct in the .gitconfig file:
 
 `$ git remote -v`
 
-Target your new application by changing all references to **flaskapp** with the name of your app (e.g., **myapp**):
+**Target your new application by changing all references to **flaskapp** with the name of your app (e.g., 'myapp'):**
 
-`find . -type f -exec sed -i 's/flaskapp/vctrl/g' {} +`
+`find . -type f -exec sed -i 's/flaskapp/myapp/g' {} +`
 
 `$ git push -u origin master`
 
