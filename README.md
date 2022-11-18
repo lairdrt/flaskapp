@@ -95,9 +95,7 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 5. Select **Finish**
 
 ### Generate SSH Public/Private Key
-`$cd ~`
-
-`$mkdir .ssh`
+`$mkdir ~/.ssh`
 
 `$chmod 0700 ~/.ssh`
 
