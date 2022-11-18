@@ -363,7 +363,7 @@ Edit the Nginx configuration file for your dev web site to use the new private k
 
 `ssl_certificate_key /home/webapp/flaskapp/deployment/certs/flaskapp.key;`
 
-## Nginx Commands
+## Linux systemctl Commands
 ```
 sudo systemctl status nginx
 sudo systemctl stop nginx
@@ -371,7 +371,7 @@ sudo systemctl start nginx
 sudo systemctl reload nginx
 sudo systemctl restart nginx
 ```
-## Application Shortcuts
+## Linux .bashrc Aliases
 ```
 alias lal='ls -al --group-directories-first'
 alias cls="clear"
