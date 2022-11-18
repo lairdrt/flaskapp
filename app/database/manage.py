@@ -16,9 +16,9 @@ def init_app(app):
         Base.metadata.create_all(bind=engine)
         print('Adding default user(s)...')
         with ManagedSession() as db_session:
-            u = User(username='rtlaird', email='robin.laird@cox.net')
-            u.set_password('Thx1138!')
-            u.set_recovery_password('B54_up@9!Z*{;x6-')
+            u = User(username='appuser')
+            u.set_password('appuser_password')
+            u.set_recovery_password('appuser_recovery_password')
             db_session.add(u)
             db_session.commit()
         print("Done")
