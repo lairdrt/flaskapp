@@ -56,12 +56,12 @@ monitor and keyboard to the Raspberry Pi so that you can log into the OS and mak
 You should be able to log into the Raspberry Pi using the default credentials: Username='pi' Password='raspberry'
 
 ## Update OS
-`$sudo apt-get -y update`
+`$ sudo apt-get -y update`
 
-`$sudo apt-get -y upgrade`
+`$ sudo apt-get -y upgrade`
 
 ## Configure Wireless LAN
-`$sudo raspi-config`
+`$ sudo raspi-config`
 1. Select **Localisation Options**
 2. Select **WLAN Country**
 3. Select **US United States** (or your country)
@@ -69,7 +69,7 @@ You should be able to log into the Raspberry Pi using the default credentials: U
 
 Replace the contents of the wpa_supplicant.conf file with the following.
 
-`$sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
+`$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
 ```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -87,7 +87,7 @@ Reboot the Raspberry Pi to load the WLAN settings.
 https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 
 ### Enable SSH on Raspberry Pi
-`$sudo raspi-config`
+`$ sudo raspi-config`
 1. Select **Interface Options**
 2. Select **SSH**
 3. Select **Yes**
@@ -95,19 +95,19 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 5. Select **Finish**
 
 ### Generate SSH Public/Private Key
-`$mkdir ~/.ssh`
+`$ mkdir ~/.ssh`
 
-`$chmod 0700 ~/.ssh`
+`$ chmod 0700 ~/.ssh`
 
-`$cd ~/.ssh`
+`$ cd ~/.ssh`
 
-`$ssh-keygen -t rsa`
+`$ ssh-keygen -t rsa`
 
 1. Hit enter to accept default settings for all prompts
 
-`$mv id_rsa.pub authorized_keys`
+`$ mv id_rsa.pub authorized_keys`
 
-`$ssh -T git@github.com`
+`$ ssh -T git@github.com`
 1. Answer **Yes** to question about wanting to connect
 2. This should add GitHub to ~/.ssh/known_hosts file
 
@@ -140,11 +140,11 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 7. Select **Add SSH key**
 
 ## Install Python and Other Tools
-`$sudo apt-get -y install python3 python3-venv python3-dev python3-pip`
+`$ sudo apt-get -y install python3 python3-venv python3-dev python3-pip`
 
-`$sudo apt-get -y install supervisor nginx git`
+`$ sudo apt-get -y install supervisor nginx git`
 
-`$sudo pip install --upgrade pip`
+`$ sudo pip install --upgrade pip`
 
 ## Setup git Repository
 **First on GitHub:**
@@ -155,61 +155,61 @@ You'll need the URL for the new repository below; it has the form `git@github.co
 
 **Then on the local development machine:**
 
-`$mkdir ~/flaskapp`
+`$ mkdir ~/flaskapp`
 
-`$cd ~/flaskapp`
+`$ cd ~/flaskapp`
 
 Verify that your email address and username are correct in the .gitconfig file.
 
-`$git config --global user.name "FIRST_NAME LAST_NAME"`
+`$ git config --global user.name "FIRST_NAME LAST_NAME"`
 
-`$git config --global user.email "MY_NAME@example.com"`
+`$ git config --global user.email "MY_NAME@example.com"`
 
-`$git clone git@github.com:lairdrt/flaskapp.git .`
+`$ git clone git@github.com:lairdrt/flaskapp.git .`
 
-`$git remote remove origin`
+`$ git remote remove origin`
 
-`$git remote add origin git@github.com:USERNAME/REPONAME.git`
+`$ git remote add origin git@github.com:USERNAME/REPONAME.git`
 
-`$git remote -v`
+`$ git remote -v`
 
-`$git push -u origin master`
+`$ git push -u origin master`
 
 ## Install Rust Compiler for Python Cryptography Package
 The Python Cryptography package is required for the pyOpenSSL package which is required for OAuth authorization.
 OAuth is used to log into the Flask application via third-party providers such as GitHub. The Python Cryptography package is built 
 using the Rust compiler.
 
-`$sudo curl https://sh.rustup.rs -sSf | sh`
+`$ sudo curl https://sh.rustup.rs -sSf | sh`
 1. Select option **1** (the default)
 
-`$source $HOME/.cargo/env`
+`$ source $HOME/.cargo/env`
 
 When the Python packages are installed below, the Cryptography package will be built using the Rust compiler.
 On a Raspberry Pi Zero W (not Zero 2 W), the build can take up to four (4) hours!
 
 You can uninstall the Rust compiler **AFTER** the Python packages are installed below by issuing hte command:
 
-`$sudo rustup self uninstall`
+`$ sudo rustup self uninstall`
 
 ## Create Virtual Environment and Install Python Packages
-`$cd ~/flaskapp`
+`$ cd ~/flaskapp`
 
-`$python3 -m venv venv`
+`$ python3 -m venv venv`
 
-`$source venv/bin/activate`
+`$ source venv/bin/activate`
 
-`(venv) $pip install -r requirements.txt`
+`(venv) $ pip install -r requirements.txt`
 
 ## Install MySQL DB (Maria DB)
-`$sudo apt install mariadb-server`
+`$ sudo apt install mariadb-server`
 
-`$sudo mysql_secure_installation`
+`$ sudo mysql_secure_installation`
 1. Answer **N** to prompts regarding setting/changing root password
 2. Answer **Y** to all other prompts
 
 ## Make Database
-`$sudo mysql -u root -p`
+`$ sudo mysql -u root -p`
 
 `>CREATE DATABASE database_name;`
 
@@ -221,16 +221,16 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 
 `>FLUSH PRIVILEGES;`
 
-`$cd ~/flaskapp`
+`$ cd ~/flaskapp`
 
-`$source ~/flaskapp/venv/bin/activate`
+`$ source ~/flaskapp/venv/bin/activate`
 
-`(venv) $flask database create`
+`(venv) $ flask database create`
 
 ## Configure Nginx and Supervisor
-`$sudo cp ~/flaskapp/deployment/nginx/flaskapp /etc/nginx/sites-enabled/flaskapp`
+`$ sudo cp ~/flaskapp/deployment/nginx/flaskapp /etc/nginx/sites-enabled/flaskapp`
 
-`$sudo cp ~/flaskapp/deployment/supervisor/flaskapp.conf /etc/supervisor/conf.d/flaskapp.conf`
+`$ sudo cp ~/flaskapp/deployment/supervisor/flaskapp.conf /etc/supervisor/conf.d/flaskapp.conf`
 
 ## Create Your Own SSL Certificate Authority for Serving HTTPS from Your Private Network
 https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
@@ -253,9 +253,9 @@ File summary:
 - flaskapp.crt : Signed dev site certificate (installed on dev site HTTPS web server)
 
 ### 1. Generate a private key for the root certificate:
-`$cd ~/flaskapp/deployment/certs`
+`$ cd ~/flaskapp/deployment/certs`
 
-`$sudo openssl genrsa -des3 -out sdrCA.key 2048`
+`$ sudo openssl genrsa -des3 -out sdrCA.key 2048`
 
 `Enter pass phrase for sdrCA.key:yourpassphrase`
 
@@ -263,7 +263,7 @@ RESULTS IN: sdrCA.key
 
 ### 2. Generate the root certificate using the private key:
 
-`$sudo openssl req -x509 -new -nodes -key sdrCA.key -sha256 -days 1825 -out sdrCA.pem`
+`$ sudo openssl req -x509 -new -nodes -key sdrCA.key -sha256 -days 1825 -out sdrCA.pem`
 ```
 Country Name (2 letter code) [AU]:US
 State or Province Name (full name) [Some-State]:California
@@ -293,13 +293,13 @@ Verify that the CA certificate is listed under **Trusted Root Certification Auth
 
 ### 4. Generate a private key for the dev site certificate:
 
-`$sudo openssl genrsa -out flaskapp.key 2048`
+`$ sudo openssl genrsa -out flaskapp.key 2048`
 
 RESULTS IN: flaskapp.key
 
 ### 5. Generate a certificate signing request for the dev site certificate:
 
-`$sudo openssl req -new -key flaskapp.key -out flaskapp.csr`
+`$ sudo openssl req -new -key flaskapp.key -out flaskapp.csr`
 ```
 Country Name (2 letter code) [AU]:US
 State or Province Name (full name) [Some-State]:California
@@ -338,7 +338,7 @@ RESULTS IN: flaskapp.ext
 ### 7. Generate the dev site certificate:
 Using the CSR, the CA private key, the CA certificate, and the config file, generate the signed dev site certificate.
 
-`$sudo openssl x509 -req -in flaskapp.csr -CA sdrCA.pem -CAkey sdrCA.key -CAcreateserial -out flaskapp.crt -days 825 -sha256 -extfile flaskapp.ext`
+`$ sudo openssl x509 -req -in flaskapp.csr -CA sdrCA.pem -CAkey sdrCA.key -CAcreateserial -out flaskapp.crt -days 825 -sha256 -extfile flaskapp.ext`
 
 RESULTS IN: flaskapp.crt
 
@@ -348,7 +348,7 @@ We can configure local web servers to use HTTPS with the private key and the sig
 
 Edit the Nginx configuration file for your dev web site to use the new private key and certificate.
 
-`$sudo nano /etc/nginx/sites-enabled/flaskapp`
+`$ sudo nano /etc/nginx/sites-enabled/flaskapp`
 
 `ssl_certificate /home/webapp/flaskapp/deployment/certs/flaskapp.crt;`
 
