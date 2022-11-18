@@ -42,7 +42,7 @@ server {
 
     # write access and error logs to /var/log
     access_log /var/log/flaskapp-access-ssl.log;
-    error_log /var/log/ww-flaskapp-error-ssl.log;
+    error_log /var/log/flaskapp-error-ssl.log;
 
     location / {
         # https://flask.palletsprojects.com/en/2.2.x/deploying/nginx/
