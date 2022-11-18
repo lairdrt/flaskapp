@@ -149,15 +149,13 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 `$sudo pip install --upgrade pip`
 
 ## Setup git Repository
-First on GitHub:
+**First on GitHub:**
 
 [Create a new repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
 
-Then on the local development machine:
+You'll need the URL for the new repository below; it has the form `git@github.com:USERNAME/REPONAME.git`
 
-`$cd ~`
-
-`$git clone git@github.com:lairdrt/flaskapp.git`
+**Then on the local development machine:**
 
 Verify that your email address and username are correct in the .gitconfig file.
 
@@ -165,7 +163,13 @@ Verify that your email address and username are correct in the .gitconfig file.
 
 `$git config --global user.email "MY_NAME@example.com"`
 
-`$git remote add origin https://github.com/USER/REPO>.git`
+`$cd ~`
+
+`$git clone git@github.com:lairdrt/flaskapp.git`
+
+`$git remote remove origin`
+
+`$git remote add origin git@github.com:USERNAME/REPONAME.git`
 
 `$git remote -v`
 
