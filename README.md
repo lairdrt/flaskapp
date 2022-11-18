@@ -384,4 +384,3 @@ alias frn='flask run -h localhost -p 8000'
 alias grn='gunicorn -b localhost:8000 -w 1 -t 120 app:app'
 alias sv='sudo supervisorctl stop flaskapp'
 ```
-&copy; 2020-2023 Same Day Rules
