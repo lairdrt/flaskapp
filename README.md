@@ -270,7 +270,7 @@ State or Province Name (full name) [Some-State]:California
 Locality Name (eg, city) []:San Diego
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Same Day Rules
 Organizational Unit Name (eg, section) []:Development
-Common Name (e.g. server FQDN or YOUR name) []:Same Day Rules Root
+Common Name (e.g. server FQDN or YOUR name) []:Same Day Rules IoT Root
 Email Address []:support@samedayrules.com
 ```
 RESULTS IN: sdrCA.pem
@@ -306,7 +306,7 @@ State or Province Name (full name) [Some-State]:California
 Locality Name (eg, city) []:San Diego
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Same Day Rules
 Organizational Unit Name (eg, section) []:Development
-Common Name (e.g. server FQDN or YOUR name) []:Same Day Rules Cert
+Common Name (e.g. server FQDN or YOUR name) []:Same Day Rules Flask App Cert
 Email Address []:support@samedayrules.com
 
 Please enter the following 'extra' attributes
@@ -331,7 +331,7 @@ DNS.1 = localhost
 DNS.2 = samedayrules.com
 DNS.3 = *.samedayrules.com
 IP.1 = 127.0.0.1
-IP.2 = 192.168.1.45
+IP.2 = 192.168.1.250
 ```
 RESULTS IN: flaskapp.ext
 
