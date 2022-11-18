@@ -165,7 +165,7 @@ Verify that your email address and username are correct in the .gitconfig file.
 
 `$git config --global user.email "MY_NAME@example.com"`
 
-`git remote add origin https://github.com/USER/REPO>.git`
+`$git remote add origin https://github.com/USER/REPO>.git`
 
 `$git remote -v`
 
