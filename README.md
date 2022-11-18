@@ -157,13 +157,13 @@ You'll need the URL for the new repository below; it has the form `git@github.co
 
 **Then on the local development machine:**
 
+`$cd ~`
+
 Verify that your email address and username are correct in the .gitconfig file.
 
 `$git config --global user.name "FIRST_NAME LAST_NAME"`
 
 `$git config --global user.email "MY_NAME@example.com"`
-
-`$cd ~`
 
 `$git clone git@github.com:lairdrt/flaskapp.git`
 
