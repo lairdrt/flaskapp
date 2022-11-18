@@ -278,7 +278,7 @@ Country Name (2 letter code) [AU]:US
 State or Province Name (full name) [Some-State]:California
 Locality Name (eg, city) []:San Diego
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Same Day Rules
-Organizational Unit Name (eg, section) []:Development
+Organizational Unit Name (eg, section) []:DevOps
 Common Name (e.g. server FQDN or YOUR name) []:Same Day Rules IoT Root
 Email Address []:support@samedayrules.com
 ```
@@ -314,7 +314,7 @@ Country Name (2 letter code) [AU]:US
 State or Province Name (full name) [Some-State]:California
 Locality Name (eg, city) []:San Diego
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Same Day Rules
-Organizational Unit Name (eg, section) []:Development
+Organizational Unit Name (eg, section) []:DevOps
 Common Name (e.g. server FQDN or YOUR name) []:Same Day Rules Flask App Cert
 Email Address []:support@samedayrules.com
 
