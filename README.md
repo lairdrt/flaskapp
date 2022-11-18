@@ -204,7 +204,7 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 `(venv) $ pip install -r requirements.txt`
 
 ## Install MySQL DB (Maria DB)
-`$ sudo apt install mariadb-server`
+`$ sudo apt install -y mariadb-server`
 
 `$ sudo mysql_secure_installation`
 1. Answer **N** to prompts regarding setting/changing root password
