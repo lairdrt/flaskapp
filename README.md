@@ -153,7 +153,7 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 
 [Create a new repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
 
-You'll need the URL for the new repository below; it has the form `git@github.com:USERNAME/REPONAME.git`:
+You'll need the URL for the new repository below; it has the form `git@github.com:USERNAME/REPONAME.git`
 
 **Then on the local development machine:**
 
@@ -161,7 +161,7 @@ You'll need the URL for the new repository below; it has the form `git@github.co
 
 `$ cd ~/flaskapp`
 
-Verify that your email address and username are correct in the .gitconfig file:
+Verify that your email address and username are correct in the .gitconfig file.
 
 `$ git config --global user.name "FIRST_NAME LAST_NAME"`
 
@@ -175,7 +175,7 @@ Verify that your email address and username are correct in the .gitconfig file:
 
 `$ git remote -v`
 
-**Target your new application by changing all references to **flaskapp** with the name of your app (e.g., 'myapp'):**
+Target your new application by changing all references to **flaskapp** with the name of your app (e.g., **myapp**).
 
 `find . -type f -exec sed -i 's/flaskapp/myapp/g' {} +`
 
