@@ -371,12 +371,8 @@ sudo systemctl restart nginx
 ```
 ## Application Shortcuts
 ```
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
 alias lal='ls -al --group-directories-first'
 alias cls="clear"
-
 alias ave='source ~/flaskapp/venv/bin/activate'
 alias frn='flask run -h localhost -p 8000'
 alias grn='gunicorn -b localhost:8000 -w 1 -t 120 app:app'
