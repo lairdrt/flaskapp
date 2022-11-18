@@ -41,11 +41,6 @@
   }
 }
 
-// sets a specific icon family to use alongside style + icon mixins
-.fa-family-classic() {
-  font-family: 'Font Awesome 6 Free';
-}
-
 // convenience mixins for declaring pseudo-elements by CSS variable,
 // including all style-specific font properties, and both the ::before
 // and ::after elements in the duotone case.
@@ -64,6 +59,36 @@
 
   &::before {
     content: @fa-var;
+  }
+}
+
+.fa-icon-light(@fa-var) {
+  .fa-icon;
+  .fa-light;
+
+  &::before {
+    content: @fa-var;
+  }
+}
+
+.fa-icon-thin(@fa-var) {
+  .fa-icon;
+  .fa-thin;
+
+  &::before {
+    content: @fa-var;
+  }
+}
+
+.fa-icon-duotone(@fa-var) {
+  .fa-icon;
+  .fa-duotone;
+
+  &::before {
+    content: @fa-var;
+  }
+  &::after {
+    content: %("%s%s", @fa-var, @fa-var);
   }
 }
 
