@@ -46,7 +46,7 @@ to the clipboard so that you can paste it into a field during OS configuration b
 13. Insert the MicroSD card into the Raspberry Pi memory card slot
 14. Turn power **ON** to the Raspberry Pi and wait ~5 minutes for the initial boot
 
-Note that the Raspberry Pi imager program does not correctly set the `scan_ssid` parameter in the wireless LAN configuration for hidden networks. So, it is likely that the Raspberry Pi will not connect to your wireless network.
+**NOTE:** The Raspberry Pi imager program does not correctly set the `scan_ssid` parameter in the wireless LAN configuration for hidden networks. So, it is likely that the Raspberry Pi will not connect to your wireless network.
 
 ## Connect Monitor/Keyboard to Raspberry Pi
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
