@@ -39,7 +39,7 @@ to the clipboard so that you can paste it into a field during OS configuration b
 - Enter the password for the wireless LAN and then select the **Wireless LAN country**
 - Set locale settings as necessary
 - Finally, select **SAVE**
-9. Select **WRITE**
+9. Select **WRITE** and then confirm the write operation
 10. After the write operation is complete, exit the imager program
 11. Eject the USB card reader and remove the MicroSD card from the reader
 12. Make sure power is **OFF** on the Raspberry Pi
