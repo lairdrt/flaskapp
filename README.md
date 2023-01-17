@@ -44,6 +44,7 @@ to the clipboard so that you can paste it into a field during OS configuration b
 11. Eject the USB card reader and remove the MicroSD card from the reader
 12. Make sure power is **OFF** on the Raspberry Pi
 13. Insert the MicroSD card into the Raspberry Pi memory card slot
+14. Turn power ON to the Raspberry Pi and wait ~5 minutes for the initial boot
 
 ## Connect Monitor/Keyboard to Raspberry Pi
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
