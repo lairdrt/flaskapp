@@ -34,7 +34,7 @@ to the clipboard so that you can paste it into a field during OS configuration b
 8. Type **CTRL + Shift + X** to preconfigure the OS as follows:
 - Select **Set hostname** then enter a short name for the Raspberry Pi
 - Select **Enable SSH** then **Allow public-key authentication only**
-- Select **Set authorized_keys for 'pi'** and paste your known SSH public key here
+- Select **Set authorized_keys for 'username'** and paste your known SSH public key here
 - Select **Set username and password** then enter a username of choice and a password for that account
 - Select **Configure wireless LAN** then enter the name of the network in the SSID field
 - Enter the password for the wireless LAN and then select the **Wireless LAN country**
