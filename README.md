@@ -48,6 +48,8 @@ to the clipboard so that you can paste it into a field during OS configuration b
 
 **NOTE:** The Raspberry Pi imager program does not correctly configure the wireless LAN adapter, so it is likely that the Raspberry Pi will not connect to your wireless network.
 
+![rpiimager](https://user-images.githubusercontent.com/31704471/213926239-d7746cea-aff0-4701-97bb-f0b1763cff53.png)
+
 ## Connect Monitor/Keyboard to Raspberry Pi
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
 monitor and keyboard to the Raspberry Pi so that you can log into the OS and make changes.
