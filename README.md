@@ -73,6 +73,8 @@ You should be able to log into the Raspberry Pi using the default credentials: U
 3. Select **US United States** (or your country)
 4. Select **Finish**
 
+![raspiconfig](https://user-images.githubusercontent.com/31704471/215566928-556ac11b-af9a-48f6-9f73-e270812c9d0d.png)
+
 Replace the contents of the wpa_supplicant.conf file with the following.
 
 `$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
