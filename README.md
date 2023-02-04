@@ -42,17 +42,20 @@ to the clipboard so that you can paste it into a field during OS configuration b
 - Finally, select **SAVE**
 9. Select **WRITE** and then confirm the write operation
 10. After the write operation is complete, exit the imager program
+
+If you don't need WLAN function on your Pi, then continue with the steps below. Otherwise, skip to the next section and correctly configure the WLAN interface before continuing.
+
 11. Eject the USB card reader and remove the MicroSD card from the reader
 12. Make sure power is **OFF** on the Raspberry Pi
 13. Insert the MicroSD card into the Raspberry Pi memory card slot
 14. Turn power **ON** to the Raspberry Pi and wait ~5 minutes for the initial boot
 
+![rpiimager](https://user-images.githubusercontent.com/31704471/213926910-d1358cc7-5e10-4dd3-8bc3-4cc8bc77d952.png)
+
 ## Fix Raspberry Pi Imager Broken WLAN Config
 The Raspberry Pi imager program does not correctly configure the wireless LAN adapter, so it is likely that the Raspberry Pi will not connect to your wireless network. To correctly configure the wireless LAN interface, following these steps:
 
 [Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup/wifi-with-dhcp)
-
-![rpiimager](https://user-images.githubusercontent.com/31704471/213926910-d1358cc7-5e10-4dd3-8bc3-4cc8bc77d952.png)
 
 ## Connect Monitor/Keyboard to Raspberry Pi
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
