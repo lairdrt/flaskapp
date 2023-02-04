@@ -47,7 +47,10 @@ to the clipboard so that you can paste it into a field during OS configuration b
 13. Insert the MicroSD card into the Raspberry Pi memory card slot
 14. Turn power **ON** to the Raspberry Pi and wait ~5 minutes for the initial boot
 
-**NOTE:** The Raspberry Pi imager program does not correctly configure the wireless LAN adapter, so it is likely that the Raspberry Pi will not connect to your wireless network.
+## Fix Raspberry Pi Imager Broken WLAN Config
+The Raspberry Pi imager program does not correctly configure the wireless LAN adapter, so it is likely that the Raspberry Pi will not connect to your wireless network. To correctly configure the wireless LAN interface, following these steps:
+
+[Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup/wifi-with-dhcp)
 
 ![rpiimager](https://user-images.githubusercontent.com/31704471/213926910-d1358cc7-5e10-4dd3-8bc3-4cc8bc77d952.png)
 
