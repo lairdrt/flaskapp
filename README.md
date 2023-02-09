@@ -25,6 +25,8 @@ And you'll usually need some form of development station, assuming a laptop comp
 In one of the steps below, you will need a known SSH public key that you use with Secure Shell. You'll need to open the key file and then copy the contents
 to the clipboard so that you can paste it into a field during OS configuration below.
 
+###Note: The Raspberry Pi Imager program version 1.7.3 (and possibly prior versions) do not correctly configure the OS for a hidden wireless LAN. So you cannot use the **Advanced options** to setup your hidden WiFi network. Instead, follow the directions below under **Fix Raspberry Pi Imager Broken WLAN Config** to work around this issue.
+
 1. Insert MicroSD card into the card reader
 2. Insert the USB card reader into the laptop
 3. Download and install [Raspberry Pi OS imager software](https://www.raspberrypi.com/software/) on the laptop
@@ -36,10 +38,15 @@ to the clipboard so that you can paste it into a field during OS configuration b
 - Select **Enable SSH** then **Allow public-key authentication only**
 - Select **Set authorized_keys for 'username'** and paste your known SSH public key here
 - Select **Set username and password** then enter a username of choice and a password for that user
+- Select **Configure wireless LAN** then enter the SSID (name) and password for your wireless network
 - Set locale settings as necessary
 - Finally, select **SAVE**
 9. Select **WRITE** and then confirm the write operation
 10. After the write operation is complete, exit the imager program
+11. Eject the USB card reader and remove the MicroSD card from the reader
+12. Make sure power is **OFF** on the Raspberry Pi
+13. Insert the MicroSD card into the Raspberry Pi memory card slot
+14. Turn power **ON** to the Raspberry Pi and wait ~5 minutes for the initial boot
 
 ![raspberryimager](https://user-images.githubusercontent.com/31704471/217862792-f901a345-8240-4f40-b4bb-72879dc80222.png)
 
@@ -47,10 +54,6 @@ to the clipboard so that you can paste it into a field during OS configuration b
 The Raspberry Pi imager program does not correctly configure the wireless LAN adapter, so it is likely that the Raspberry Pi will not connect to your wireless network. To correctly configure the wireless LAN interface, following these steps:
 
 [Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup/wifi-with-dhcp)
-11. Eject the USB card reader and remove the MicroSD card from the reader
-12. Make sure power is **OFF** on the Raspberry Pi
-13. Insert the MicroSD card into the Raspberry Pi memory card slot
-14. Turn power **ON** to the Raspberry Pi and wait ~5 minutes for the initial boot
 
 ## Connect Monitor/Keyboard to Raspberry Pi
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
