@@ -48,7 +48,7 @@ to the clipboard so that you can paste it into a field during OS configuration b
 13. Insert the MicroSD card into the Raspberry Pi memory card slot
 14. Turn power **ON** to the Raspberry Pi and wait ~5 minutes for the initial boot
 
-![raspberryimager](https://user-images.githubusercontent.com/31704471/217862792-f901a345-8240-4f40-b4bb-72879dc80222.png)
+![raspberryimager](https://user-images.githubusercontent.com/31704471/217876713-a74b1305-132a-4259-a3af-27ea1b07d02e.png)
 
 ## Fix Raspberry Pi Imager Broken WLAN Config
 The Raspberry Pi imager program (v1.7.3) does not correctly configure the wireless network adapter for **hidden** networks. There are two issues:
