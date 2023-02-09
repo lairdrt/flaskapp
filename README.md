@@ -51,9 +51,13 @@ to the clipboard so that you can paste it into a field during OS configuration b
 ![raspberryimager](https://user-images.githubusercontent.com/31704471/217862792-f901a345-8240-4f40-b4bb-72879dc80222.png)
 
 ## Fix Raspberry Pi Imager Broken WLAN Config
-The Raspberry Pi imager program does not correctly configure the wireless LAN adapter, so it is likely that the Raspberry Pi will not connect to your wireless network. To correctly configure the wireless LAN interface, following these steps:
+The Raspberry Pi imager program does not correctly configure the wireless network adapter for hidden networks, so it is likely that the Raspberry Pi will not connect to your wireless network. To correctly configure the wireless LAN interface, following these two steps:
 
+1. Manually create a wpa_supplicant.conf file by following these instructions:
 [Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup/wifi-with-dhcp)
+2. Manually setup the WLAN country code by following these instructions:
+a. This
+b. That...
 
 ## Connect Monitor/Keyboard to Raspberry Pi
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
