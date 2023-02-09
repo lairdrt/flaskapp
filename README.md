@@ -57,21 +57,13 @@ The Raspberry Pi imager program (v1.7.3) does not correctly configure the wirele
  
 To correctly configure the wireless LAN interface, following these two steps:
 
-1. Manually create a `wpa_supplicant.conf` file by following these instructions:
-
-[Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup/wifi-with-dhcp)
-
+1. Manually create a `wpa_supplicant.conf` file by following these instructions:  [Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup/wifi-with-dhcp)
 2. Manually setup the WLAN country code by following these instructions:
-
-a. You need to add a single line to the end of the `firstrun.sh` file located in the root (/) folder of the SD card holding the OS image.
-
-b. Locate the `firstrun.sh` file on the SD card, and then open the file with your favorite editor (like Notepad on Windows).
-
-c. Add the following line to the end of the file: `sudo raspi-config nonint do_wifi_country xx` replacing `xx` with your two letter country code (e.g., US).
-
-d. Save the file, exit the editor.
-
-e. The WLAN country code should now be set correctly.
+- You need to add a single line to the end of the `firstrun.sh` file located in the root (/) folder of the SD card holding the OS image.
+- Locate the `firstrun.sh` file on the SD card, and then open the file with your favorite editor (like Notepad on Windows).
+- Add the following line to the end of the file: `sudo raspi-config nonint do_wifi_country xx` replacing `xx` with your two letter country code (e.g., US).
+- Save the file, exit the editor.
+- The WLAN country code should now be set correctly.
 
 ## Connect Monitor/Keyboard to Raspberry Pi
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
