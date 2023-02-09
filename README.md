@@ -63,7 +63,7 @@ To correctly configure the wireless LAN interface, following these two steps:
 - Locate the `firstrun.sh` file on the SD card, and then open the file with your favorite editor (like Notepad on Windows).
 - Add the following line to the end of the file, replacing `xx` with your two letter country code (e.g., US): `sudo raspi-config nonint do_wifi_country xx` 
 - Save the file, exit the editor.
-- The WLAN country code should now be set correctly.
+- The WLAN country code should now be set correctly after the OS boots for the first time.
 
 ## Connect Monitor/Keyboard to Raspberry Pi
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
