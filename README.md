@@ -51,13 +51,20 @@ to the clipboard so that you can paste it into a field during OS configuration b
 ![raspberryimager](https://user-images.githubusercontent.com/31704471/217862792-f901a345-8240-4f40-b4bb-72879dc80222.png)
 
 ## Fix Raspberry Pi Imager Broken WLAN Config
-The Raspberry Pi imager program does not correctly configure the wireless network adapter for hidden networks, so it is likely that the Raspberry Pi will not connect to your wireless network. To correctly configure the wireless LAN interface, following these two steps:
+The Raspberry Pi imager program (v1.7.3) does not correctly configure the wireless network adapter for **hidden** networks. There are two issues:
+1. The Raspberry Pi imager program fails to insert the `scan_ssid=1` line into the `wpa_supplicant.conf` file so the OS fails to find the WLAN.
+2. When you attempt to manually configure a separate `wpa_supplicant.conf` file (as given below), the OS, upon first boot, fails to recognize the WLAN country code setting, so the WLAN cannot function properly.
+ 
+To correctly configure the wireless LAN interface, following these two steps:
 
-1. Manually create a wpa_supplicant.conf file by following these instructions:
+1. Manually create a `wpa_supplicant.conf` file by following these instructions:
 [Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup/wifi-with-dhcp)
 2. Manually setup the WLAN country code by following these instructions:
-a. This
-b. That...
+a. You need to add a single line to the end of the `firstrun.sh` file located in the root (/) folder of the SD card holding the OS image.
+b. Locate the `firstrun.sh` file on the SD card, and then open the file with your favorite editor (like Notepad on Windows).
+c. Add the following line to the end of the file: `sudo raspi-config nonint do_wifi_country xx` replacing `xx` with your two letter country code (e.g., US).
+d. Save the file, exit the editor.
+e. The WLAN country code should now be set correctly.
 
 ## Connect Monitor/Keyboard to Raspberry Pi
 Preconfiguring the Raspberry Pi **may** result in the WLAN and SSH working, but probably not. So, you'll want to connect the
