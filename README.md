@@ -22,7 +22,7 @@ If you have issues setting up either the wireless LAN connection or SSH, you may
 And you'll usually need some form of development station, assuming a laptop computer.
 
 ## Install Raspberry Pi OS on the MicroSD Card
-In one of the steps below, you will need a known SSH public key that you use with Secure Shell. You'll need to open the key file and then copy the contents
+In one of the steps below, you'll need a known SSH public key that you use with Secure Shell. You'll need to open the key file and then copy the contents
 to the clipboard so that you can paste it into a field during OS configuration below.
 
 **Note:** The Raspberry Pi Imager program version 1.7.3 (and possibly prior versions) do not correctly configure the OS for a hidden wireless network. So you cannot use the **Advanced options** to setup your hidden network. Instead, follow the directions below under **Fix Raspberry Pi Imager Broken WLAN Config** to work around this issue.
