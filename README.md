@@ -55,7 +55,7 @@ The Raspberry Pi imager program (v1.7.3) does not correctly configure the wirele
 1. The Raspberry Pi imager program fails to insert the `scan_ssid=1` line into the `wpa_supplicant.conf` file so the OS fails to find the WLAN.
 2. When you attempt to manually configure a separate `wpa_supplicant.conf` file (as given below), the OS, upon first boot, fails to recognize the WLAN country code setting, so the WLAN cannot function properly.
  
-To correctly configure the wireless LAN interface, following these two steps:
+To correctly configure the wireless LAN interface, follow these two steps:
 
 1. Manually create a `wpa_supplicant.conf` file by following these instructions:  [Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup/wifi-with-dhcp)
 2. Manually setup the WLAN country code by following these instructions:
