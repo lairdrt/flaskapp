@@ -61,7 +61,7 @@ To correctly configure the wireless LAN interface, follow these two steps:
 2. Manually setup the WLAN country code by following these instructions:
 - You need to add a single line to the end of the `firstrun.sh` file located in the root (/) folder of the SD card holding the OS image.
 - Locate the `firstrun.sh` file on the SD card, and then open the file with your favorite editor (like Notepad on Windows).
-- Add the following line to the end of the file, replacing `xx` with your two letter country code (e.g., US): `sudo raspi-config nonint do_wifi_country xx` 
+- Add the following line toward the end of the file before the script exits, replacing `xx` with your two letter country code (e.g., US): `sudo raspi-config nonint do_wifi_country xx` 
 - Save the file, exit the editor.
 - The WLAN country code should now be set correctly after the OS boots for the first time.
 
