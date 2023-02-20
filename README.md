@@ -251,7 +251,7 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 6. Remove test database and access to it? **Y**
 7. Reload privelege tables now? **Y**
 
-## Make Database
+### Make Database
 `$ sudo mysql -u root -p`
 
 `>CREATE DATABASE database_name;`
@@ -269,6 +269,27 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 `$ source ~/flaskapp/venv/bin/activate`
 
 `(venv) $ flask database create`
+
+## Install PostgreSQL
+https://www.postgresql.org/download/linux/debian/
+
+`$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`
+
+`$ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -`
+
+`$ sudo apt-get update`
+
+`$ sudo apt-get -y install postgresql`
+
+### Make Database
+
+`$ sudo su - postgres`
+
+`$ psql`
+
+
+
+
 
 ## Configure Nginx and Supervisor
 `$ sudo cp ~/flaskapp/deployment/nginx/flaskapp /etc/nginx/sites-enabled/flaskapp`
