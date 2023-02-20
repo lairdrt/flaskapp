@@ -272,6 +272,10 @@ https://www.postgresql.org/files/documentation/pdf/15/postgresql-15-US.pdf
 
 ## Install MySQL DB (Maria DB)
 
+https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-debian-11
+
+`$ sudo apt update`
+
 `$ sudo apt install -y mariadb-server`
 
 `$ sudo mysql_secure_installation`
@@ -287,15 +291,15 @@ https://www.postgresql.org/files/documentation/pdf/15/postgresql-15-US.pdf
 
 `$ sudo mysql -u root -p`
 
-`>create databae database_name;`
+`> create databae database_name;`
 
-`>create user 'database_user_name'@'localhost' identified by 'database_user_password';`
+`> create user 'database_user_name'@'localhost' identified by 'database_user_password';`
 
-`>grant all privileges on database_name.* to 'database_user_name'@'localhost';`
+`> grant all privileges on database_name.* to 'database_user_name'@'localhost';`
 
-`>flush privileges;`
+`> flush privileges;`
 
-`>quit`
+`> exit`
 
 `$ cd ~/flaskapp`
 
