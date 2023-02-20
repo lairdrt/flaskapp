@@ -277,7 +277,7 @@ https://mariadb.com/kb/en/sql-statements/
 
 `$ sudo apt update`
 
-`$ sudo apt install -y mariadb-server`
+`$ sudo apt -y install mariadb-server`
 
 `$ sudo mysql_secure_installation`
 1. Enter current password for root (enter for none): **\<enter\>**
