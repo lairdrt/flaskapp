@@ -77,9 +77,12 @@ monitor and keyboard to the Raspberry Pi so that you can log into the OS and mak
 You should be able to log into the Raspberry Pi using the default credentials: Username='pi' Password='raspberry'
 
 ## Update OS
+
 `$ sudo apt -y update`
 
 `$ sudo apt -y upgrade`
+
+`$ sudo apt -y autoremove`
 
 `$ cat /etc/os-release`
 
