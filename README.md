@@ -272,7 +272,8 @@ https://www.postgresql.org/files/documentation/pdf/15/postgresql-15-US.pdf
 
 ## Install MySQL DB (Maria DB)
 
-https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-debian-11
+https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-debian-11<br>
+https://mariadb.com/kb/en/sql-statements/
 
 `$ sudo apt update`
 
