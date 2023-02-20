@@ -241,7 +241,8 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 
 ## Install PostgreSQL
 
-https://www.postgresql.org/download/linux/debian/
+https://www.postgresql.org/download/linux/debian/<br>
+https://www.postgresql.org/files/documentation/pdf/15/postgresql-15-US.pdf
 
 `$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`
 
@@ -262,6 +263,12 @@ https://www.postgresql.org/download/linux/debian/
 `postgres=# grant all privileges on database database_name to database_user_name;`
 
 `postgres=# \q`
+
+`$ cd ~/flaskapp`
+
+`$ source ~/flaskapp/venv/bin/activate`
+
+`(venv) $ flask database create`
 
 ## Install MySQL DB (Maria DB)
 
