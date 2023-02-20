@@ -168,11 +168,12 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 7. Select **Add SSH key**
 
 ## Install Python and Other Tools
-`$ sudo apt-get -y install python3 python3-venv python3-dev python3-pip`
 
-`$ sudo apt-get -y install build-essential libssl-dev libffi-dev cargo`
+`$ sudo apt -y install python3 python3-venv python3-dev python3-pip`
 
-`$ sudo apt-get -y install supervisor nginx git`
+`$ sudo apt -y install build-essential libssl-dev libffi-dev cargo`
+
+`$ sudo apt -y install supervisor nginx git`
 
 `$ sudo pip install --upgrade pip`
 
@@ -215,6 +216,7 @@ OAuth is used to log into the Flask application via third-party providers such a
 using the Rust compiler.
 
 `$ sudo curl https://sh.rustup.rs -sSf | sh`
+
 1. Select option **1** (the default)
 
 `$ source $HOME/.cargo/env`
