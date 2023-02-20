@@ -224,7 +224,7 @@ using the Rust compiler.
 When the Python packages are installed below, the Cryptography package will be built using the Rust compiler.
 On a Raspberry Pi Zero W (not Zero 2 W), the build can take up to four (4) hours!
 
-You can uninstall the Rust compiler **AFTER** the Python packages are installed below by issuing hte command:
+You can uninstall the Rust compiler **AFTER** the Python packages are installed below by issuing the command:
 
 `$ sudo rustup self uninstall`
 
@@ -237,9 +237,28 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 
 `(venv) $ pip install -r requirements.txt`
 
-**Restore .env file.**
+**Restore .env file typically to ~/flaskapp/app/instance.**
+
+## Install PostgreSQL
+
+https://www.postgresql.org/download/linux/debian/
+
+`$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`
+
+`$ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -`
+
+`$ sudo apt-get update`
+
+`$ sudo apt-get -y install postgresql`
+
+### Make Database
+
+`$ sudo su - postgres`
+
+`$ psql`
 
 ## Install MySQL DB (Maria DB)
+
 `$ sudo apt install -y mariadb-server`
 
 `$ sudo mysql_secure_installation`
@@ -252,6 +271,7 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 7. Reload privelege tables now? **Y**
 
 ### Make Database
+
 `$ sudo mysql -u root -p`
 
 `>CREATE DATABASE database_name;`
@@ -270,28 +290,8 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 
 `(venv) $ flask database create`
 
-## Install PostgreSQL
-https://www.postgresql.org/download/linux/debian/
-
-`$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`
-
-`$ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -`
-
-`$ sudo apt-get update`
-
-`$ sudo apt-get -y install postgresql`
-
-### Make Database
-
-`$ sudo su - postgres`
-
-`$ psql`
-
-
-
-
-
 ## Configure Nginx and Supervisor
+
 `$ sudo cp ~/flaskapp/deployment/nginx/flaskapp /etc/nginx/sites-enabled/flaskapp`
 
 `$ sudo cp ~/flaskapp/deployment/supervisor/flaskapp.conf /etc/supervisor/conf.d/flaskapp.conf`
