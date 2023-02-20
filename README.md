@@ -248,9 +248,9 @@ https://www.postgresql.org/files/documentation/pdf/15/postgresql-15-US.pdf
 
 `$ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -`
 
-`$ sudo apt-get update`
+`$ sudo apt update`
 
-`$ sudo apt-get -y install postgresql`
+`$ sudo apt -y install postgresql`
 
 ### Make Database
 
