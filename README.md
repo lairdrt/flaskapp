@@ -253,9 +253,15 @@ https://www.postgresql.org/download/linux/debian/
 
 ### Make Database
 
-`$ sudo su - postgres`
+`$ sudo -u postgres psql`
 
-`$ psql`
+`postgres=# create database database_name;`
+
+`postgres=# create user database_user_name with encrypted password 'database_user_password';`
+
+`postgres=# grant all privileges on database database_name to database_user_name;`
+
+`postgres=# \q`
 
 ## Install MySQL DB (Maria DB)
 
@@ -274,15 +280,15 @@ https://www.postgresql.org/download/linux/debian/
 
 `$ sudo mysql -u root -p`
 
-`>CREATE DATABASE database_name;`
+`>create databae database_name;`
 
-`>CREATE USER 'database_user_name'@'localhost' IDENTIFIED BY 'database_user_password';`
+`>create user 'database_user_name'@'localhost' identified by 'database_user_password';`
 
-`>GRANT ALL PRIVILEGES ON database_name.* TO 'database_user_name'@'localhost';`
+`>grant all privileges on database_name.* to 'database_user_name'@'localhost';`
 
-`>ALTER USER database_user_name@localhost IDENTIFIED BY 'database_user_password'; # as necessary`
+`>flush privileges;`
 
-`>FLUSH PRIVILEGES;`
+`>quit`
 
 `$ cd ~/flaskapp`
 
