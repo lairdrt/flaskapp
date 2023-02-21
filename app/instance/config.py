@@ -7,8 +7,8 @@ load_dotenv(os.path.join(basedir, '.env'), verbose=True)
 # Configuration for all development phases
 class Config(object):
     # Note that values coming from the environment are basically strings, not numbers nor booleans
-    DEBUG = os.environ.get('FLASK_DEBUG') == 'True'
-    TESTING = os.environ.get('TESTING') == 'True'
+    DEBUG = os.environ.get('FLASK_DEBUG') or True
+    TESTING = os.environ.get('TESTING') or True
     SERIAL_NUMBER = os.environ.get('SERIAL_NUMBER') or os.urandom(13)
     SECRET_KEY = os.environ.get('SECRET_KEY') or os.urandom(24)
     RECOVERY_PASSWORD = os.environ.get('RECOVERY_PASSWORD') or os.urandom(16)
