@@ -310,7 +310,7 @@ https://mariadb.com/kb/en/sql-statements/
 6. Remove test database and access to it? **Y**
 7. Reload privelege tables now? **Y**
 
-### Make Database
+### Make Database in MySQL
 
 `$ sudo mysql -u root -p`
 
@@ -323,6 +323,8 @@ https://mariadb.com/kb/en/sql-statements/
 `> flush privileges;`
 
 `> exit`
+
+### Make Database Tables in Flask
 
 `$ cd ~/flaskapp`
 
