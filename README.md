@@ -241,9 +241,11 @@ You can uninstall the Rust compiler **AFTER** the Python packages are installed 
 
 ## Install PostgreSQL
 
-https://www.postgresql.org/download/linux/debian/<br>
+https://www.postgresql.org/download/linux/debian/
+
 https://www.postgresql.org/files/documentation/pdf/15/postgresql-15-US.pdf
-https://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge
+
+https://linuxize.com/post/how-to-install-postgresql-on-debian-10/
 
 `$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`
 
@@ -258,18 +260,17 @@ https://stackoverflow.com/questions/18664074/getting-error-peer-authentication-f
 1. Find the `pg_hba.conf` file.
 2. Change the access method for all "local" users for Unix domain socket connections.
 3. Change the method from **peer** to **md5**.
-```
-$ sudo nano /etc/postgresql/13/main/pg_hba.conf
 
-# TYPE  DATABASE        USER            ADDRESS                 METHOD
-#
-# Database administrative login by Unix domain socket
-local   all             postgres                                peer
+`$ sudo nano /etc/postgresql/13/main/pg_hba.conf`
 
-# "local" is for Unix domain socket connections only
-#local   all             all                                     peer
-local   all             all                                     md5
-```
+`# TYPE  DATABASE        USER            ADDRESS                 METHOD`<br>
+`#`<br>
+`# Database administrative login by Unix domain socket`<br>
+`local   all             postgres                                peer`<br>
+<br>
+`# "local" is for Unix domain socket connections only`<br>
+`#local   all             all                                     peer`<br>
+`local   all             all                                     md5`<br>
 
 ### Make Database in PostgreSQL
 
