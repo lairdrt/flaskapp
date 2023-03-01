@@ -338,6 +338,15 @@ https://mariadb.com/kb/en/sql-statements/
 
 `$ sudo cp ~/flaskapp/deployment/supervisor/flaskapp.conf /etc/supervisor/conf.d/flaskapp.conf`
 
+## Change File Permissions
+```
+sudo chmod 600 ~/flaskapp/app/instance/.env
+sudo chmod 700 ~/flaskapp/backup
+sudo chmod 700 ~/flaskapp/deployment
+sudo chmod 700 ~/flaskapp/logs
+sudo chmod 700 ~/flaskapp/uploads
+sudo chmod 700 ~/flaskapp/dnloads
+```
 ## Create Your Own SSL Certificate Authority for Serving HTTPS from Your Private Network
 https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
 
