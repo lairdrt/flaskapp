@@ -135,6 +135,8 @@ https://garywoodfine.com/setting-up-ssh-keys-for-github-access/
 
 `$ mv id_rsa.pub authorized_keys`
 
+`$ chmod 0600 authorized_keys`
+
 `$ ssh -T git@github.com`
 1. Answer **Yes** to question about wanting to connect
 2. This should add GitHub to ~/.ssh/known_hosts file
