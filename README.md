@@ -327,6 +327,15 @@ https://mariadb.com/kb/en/sql-statements/
 `> exit`
 
 ### Make Database Tables in Flask
+First you'll have to install a MySQL connector for Python and then change the SQLAlchemy URI for the database in your config file.
+
+`$ pip install mysql-connector-python`
+
+URI for MySQL with the connector has the following format:
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+mysqlconnector://{username}:{password}@{server}/databasename"
+
+Now create the Flask database tables.
 
 `$ cd ~/flaskapp`
 
