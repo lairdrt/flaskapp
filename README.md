@@ -316,7 +316,7 @@ https://mariadb.com/kb/en/sql-statements/
 
 `$ sudo mysql -u root -p`
 
-`> create databae database_name;`
+`> create database database_name;`
 
 `> create user 'database_user_name'@'localhost' identified by 'database_user_password';`
 
