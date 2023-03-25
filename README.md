@@ -341,6 +341,8 @@ Next, if you're using Flask-Migrate, then you have to initialize the database an
 
 `$ flask db migrate -m "Baseline"`
 
+`$ flask db upgrade`
+
 Now create the Flask database tables.
 
 `$ cd ~/flaskapp`
