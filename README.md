@@ -333,7 +333,7 @@ First you'll have to install a MySQL connector for Python and then change the SQ
 
 URI for MySQL with the connector has the following format:
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+mysqlconnector://{username}:{password}@{server}/databasename"
+`"mysql+mysqlconnector://{username}:{password}@{server}/databasename"`
 
 Now create the Flask database tables.
 
