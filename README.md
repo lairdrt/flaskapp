@@ -335,6 +335,12 @@ URI for MySQL with the connector has the following format:
 
 `"mysql+mysqlconnector://{username}:{password}@{server}/databasename"`
 
+Next, if you're using Flask-Migrate, then you have to initialize the database and create the migrations folder:
+
+`$ flask db init`
+
+`$ flask db migrate -m "Baseline"`
+
 Now create the Flask database tables.
 
 `$ cd ~/flaskapp`
