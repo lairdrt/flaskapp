@@ -171,7 +171,7 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 
 ## Install Python and Other Tools
 
-`$ sudo apt -y install python3 python3-venv python3-dev python3-pip`
+`$ sudo apt -y install python3 python3-venv python3-dev python3-pip libmariadb-dev`
 
 `$ sudo apt -y install build-essential libssl-dev libffi-dev cargo`
 
